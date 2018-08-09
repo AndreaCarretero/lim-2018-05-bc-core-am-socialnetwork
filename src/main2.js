@@ -11,6 +11,7 @@ const emailUserInLine = localStorage.getItem('emaill');
 const pintar = () => {//el value del post ya se guarda, pero no consolea
   if (boxPost.value !== "") {
     almacenar();
+    boxPost.value = "";
   }
   else {
     alert("Ingrese texto en espacio")

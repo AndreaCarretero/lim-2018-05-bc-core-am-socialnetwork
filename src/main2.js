@@ -10,7 +10,7 @@ const emailUserInLine = localStorage.getItem('emaill');
   console.log(emailUserInLine);
 const pintar = () => {//el value del post ya se guarda, pero no consolea
   if (boxPost.value !== "") {
-    almacenar();
+    savePost();
     boxPost.value = "";
   }
   else {

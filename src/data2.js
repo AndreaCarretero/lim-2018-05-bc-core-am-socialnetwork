@@ -1,11 +1,11 @@
 const db = firebase.firestore();
-const speech = () => {// esta funcion es el codigo que sale en el error grandote
+const speech =() =>{// esta funcion es el codigo que sale en el error grandote
 	firestore = firebase.firestore();
 	const settings = { timestampsInSnapshots: true };
 	firestore.settings(settings);
 }
 const savePost = () => {//esta funcion es la que guarda el ID, EMAIL Y STRING(post) en fireStore
-	speech();
+	speech ();
 	db.collection("POST`s").add({
 		id: idUserInLine,
 		email: emailUserInLine,
@@ -22,7 +22,7 @@ const savePost = () => {//esta funcion es la que guarda el ID, EMAIL Y STRING(po
 }
 
 //leer documentos
-const readPost = () => {
+const readPost = () =>{
 	speech();
 	db.collection("POST`s").onSnapshot((querySnapshot) => {
 		boxPosteado.innerHTML = "";
@@ -30,14 +30,14 @@ const readPost = () => {
 			console.log(`${doc.id} => ${doc.data().post}`);
 			boxPosteado.innerHTML += `
 			<div class="z-depth-3 input-field col s10" >
-        <p>${doc.data().post}</p>
+        <p> ${doc.data().post}</p>
       </div>
       <br>
       <button type="submit" id="buttonAdd" class="btn orange">Editar</button>
       <button style="display: none" id="buttonUpdate" class="btn btn-success">Update task</button>
       <button style="display: none" id="buttonCancel" class="btn btn-danger">Cancel</button>
       <!-- Modal Trigger -->
-      <a class="waves-effect  btn modal-trigger" href="#modal1" onclick="deletePost('${doc.id}')">Eliminar</a>
+      <a class="waves-effect  btn modal-trigger" href="#modal1">Eliminar</a>
       <!-- Modal Structure -->
       <div id="modal1" class="modal">
         <div class="modal-content">
@@ -46,16 +46,16 @@ const readPost = () => {
         </div>
         <div class="modal-footer">
           <a href="#!" class="modal-close waves-effect waves-green btn-flat">¡No!</a>
-          <a href="#!" class="modal-close waves-effect waves-green btn-flat">Si,deseo eliminarlo.</a>
+          <a href="#!" class="modal-close waves-effect waves-green btn-flat"  >Si,deseo eliminarlo.</a>
         </div>
       </div>
 			`
 		});
 	});
 }
-readPost();
+// readPost();
 
-const deletePost = (a) => {
+const deletePost = () => {
 	db.collection("POST`s").doc().delete(a).then(function () {
 		console.log("Document successfully deleted!");
 	}).catch(function (error) {

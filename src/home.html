@@ -79,7 +79,7 @@
         <div class="input-field col s12">
           <textarea id="boxPost" class="materialize-textarea" data-length="700"></textarea>
           <label for="textarea2">Comparte tu experiencia</label>
-          <button class="btn right" id="publicarPost" onclick="pintar(),readPost ()"> Publicar</button>
+          <button class="btn right" id="publicarPost" onclick="pintar()"> Publicar</button>
           <div class="col 3">
             <select disable="disable" id="privacity">
               <option value="sds" class="value">Todos</option>
@@ -90,8 +90,27 @@
     </div>
     <!--Aquí finaliza el input de postear  !-->
     <!--Aquí se encuentra el espacio para los post publicados,editar el post  !-->
-    <div  class="row" id="boxPosteado">
-      
+    <div class="row" id="boxPosteado">
+      <div class="z-depth-3 input-field col s10" >
+        <p>Possssssssssssst</p>
+      </div>
+      <br>
+      <button type="submit" id="buttonAdd" class="btn orange">Editar</button>
+      <button style="display: none" id="buttonUpdate" class="btn btn-success">Update task</button>
+      <button style="display: none" id="buttonCancel" class="btn btn-danger">Cancel</button>
+      <!-- Modal Trigger -->
+      <a class="waves-effect  btn modal-trigger" href="#modal1">Eliminar</a>
+      <!-- Modal Structure -->
+      <div id="modal1" class="modal">
+        <div class="modal-content">
+          <h5>¿Estás seguro que deseas eliminar esta publicación?</h5>
+          <p></p>
+        </div>
+        <div class="modal-footer">
+          <a href="#!" class="modal-close waves-effect waves-green btn-flat">¡No!</a>
+          <a href="#!" class="modal-close waves-effect waves-green btn-flat">Si,deseo eliminarlo.</a>
+        </div>
+      </div>
     </div>
     <!--Aquí finaliza el input de postear  !-->
     <!--Aquí se encuentra el espacio para los post publicados,editar el post  !-->

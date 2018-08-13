@@ -17,9 +17,6 @@ db.collection("users").add({
 	console.error("Error adding document: ", error);
 });
 }
-
-
-
 logout = () => {
 	firebase.auth().signOut()
 		.then(() => {

@@ -22,11 +22,4 @@ const pintar = () => {//el value del post ya se guarda en el userNow, pero no co
   }
 
 }
-<<<<<<< HEAD
 console.log(userNow);
-=======
-
-
-// localStorage.setItem('post',)
-
->>>>>>> 86914b0f3b73ddfd2feffaa7f6190c4e01347251

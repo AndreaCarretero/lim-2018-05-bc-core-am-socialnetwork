@@ -12,16 +12,9 @@ window.login = () => {
 
           console.log("Usuario con login exitoso")
 				})
-<<<<<<< HEAD
 				// VALIDACIÓN!!!!!!!!!!!!! !!!!!!!!!!!!!!!
         .catch((error) => {
           alert("Aun no estas registradx ¿Qué esperas comienza a registrarte y veras todos los beneficios; o quizas tu contraseña no es correcta 😨");
-=======
-			    .catch((error) => {
-          console.log("error de firebase >" + error.code);
-          console.log("error de firebase ,mensaje >" + error.message);
-          alert("Aun no estas registradx ¿que esperas comienza a registrarte y veras todos los beneficios; o quizas tu contraseña no es correcta 😨");
->>>>>>> 86914b0f3b73ddfd2feffaa7f6190c4e01347251
         })
     }
   } else if ((emailValue || passwordValue) == "") {
@@ -34,7 +27,6 @@ window.login = () => {
     alert("Porfavor,ingrese contraseña")
   }
 }
-
 window.register = () => {
   const nameRegister = nameR.value;
   const emailRegister = emailR.value;
@@ -60,7 +52,6 @@ window.register = () => {
   }
   // almacenar();
 }
-
 loginFacebook = () => {
   const provider = new firebase.auth.FacebookAuthProvider();
   //provider.addScope("user_birthday");tiene que pedirle permiso a Facebook
@@ -77,7 +68,6 @@ loginFacebook = () => {
     });
   // almacenar();
 }
-
 loginGoogle = () => {
 	const provider = new firebase.auth.GoogleAuthProvider();
 	//autenticar con Google

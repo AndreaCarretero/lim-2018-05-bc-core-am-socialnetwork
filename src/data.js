@@ -9,11 +9,19 @@ window.login = () => {
     } else {
       firebase.auth().signInWithEmailAndPassword(emailValue, passwordValue)
         .then(() => {
+
           console.log("Usuario con login exitoso")
 				})
+<<<<<<< HEAD
 				// VALIDACIÓN!!!!!!!!!!!!! !!!!!!!!!!!!!!!
         .catch((error) => {
           alert("Aun no estas registradx ¿Qué esperas comienza a registrarte y veras todos los beneficios; o quizas tu contraseña no es correcta 😨");
+=======
+			    .catch((error) => {
+          console.log("error de firebase >" + error.code);
+          console.log("error de firebase ,mensaje >" + error.message);
+          alert("Aun no estas registradx ¿que esperas comienza a registrarte y veras todos los beneficios; o quizas tu contraseña no es correcta 😨");
+>>>>>>> 86914b0f3b73ddfd2feffaa7f6190c4e01347251
         })
     }
   } else if ((emailValue || passwordValue) == "") {
@@ -26,27 +34,7 @@ window.login = () => {
     alert("Porfavor,ingrese contraseña")
   }
 }
-const almacenar = () => {
-  //este codigo hace que el usuario se guarde en la base de datos con la fecha y hora de firebase y no con la hora de la maquina
-  const firestore = firebase.firestore();
-  const settings = {
-    timestampsInSnapshots: true
-  };
-  firestore.settings(settings);
-  //con esta funcion hace que se cree una coleccion en firestore
-  const db = firebase.firestore();
-  db.collection("users").add({
-      Nombre: nameR.value,
-      Email: emailR.value,
-      Contraseña: passwordR.value,
-    })
-    .then(function (docRef) {
-      console.log("Document written with ID: ", docRef.id);
-    })
-    .catch(function (error) {
-      console.error("Error adding document: ", error);
-    });
-}
+
 window.register = () => {
   const nameRegister = nameR.value;
   const emailRegister = emailR.value;
@@ -59,6 +47,7 @@ window.register = () => {
       firebase.auth().createUserWithEmailAndPassword(emailRegister, passwordRegister)
         .then(() => {
           alert("Bienvenidx tu registro fue exitoso comencemos 💕");
+          console.log("User >"+ JSON.stringify(user));
         })
         .catch((error) => {
           console.log("error de firebase >" + error.code);
@@ -69,8 +58,9 @@ window.register = () => {
   } else {
     alert("Ingrese todos los campos con información válida")
   }
-  almacenar();
+  // almacenar();
 }
+
 loginFacebook = () => {
   const provider = new firebase.auth.FacebookAuthProvider();
   //provider.addScope("user_birthday");tiene que pedirle permiso a Facebook
@@ -85,19 +75,20 @@ loginFacebook = () => {
       console.log("error de firebase >" + error.code);
       console.log("error de firebase ,mensaje >" + error.message);
     });
-  almacenar();
+  // almacenar();
 }
+
 loginGoogle = () => {
 	const provider = new firebase.auth.GoogleAuthProvider();
 	//autenticar con Google
 	firebase.auth().signInWithPopup(provider)
-	.then(function (result) {
+	.then((result)=> {
     // This gives you a Google Access Token. You can use it to access the Google API.
     const token = result.credential.accessToken;
     // The signed-in user info.
     const user = result.user;
     // ...
-  }).catch(function (error) {
+  }).catch((error)=> {
     // Handle Errors here.
     const errorCode = error.code;
     const errorMessage = error.message;
@@ -107,6 +98,26 @@ loginGoogle = () => {
     const credential = error.credential;
     // ...
   });
-  almacenar();
+  // almacenar();
 }
+
+// const almacenar = () => {
+// 	//este codigo hace que el usuario se guarde en la base de datos con la fecha y hora de firebase y no con la hora de la maquina
+// 	const firestore = firebase.firestore();
+// 	const settings = { timestampsInSnapshots: true };
+// 	firestore.settings(settings);
+// 	//con esta funcion hace que se cree una coleccion en firestore
+// 	const db = firebase.firestore();
+// 	db.collection("users").add({
+// 		Nombre: nameR.value,
+// 		Email: emailR.value,
+// 		Contraseña: passwordR.value,
+// 	})
+// 		.then(function (docRef) {
+// 			console.log("Document written with ID: ", docRef.id);
+// 		})
+// 		.catch(function (error) {
+// 			console.error("Error adding document: ", error);
+// 		});
+// }
 

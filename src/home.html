@@ -12,8 +12,24 @@
   <!-- Compiled and minified CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
   <link rel="stylesheet" href="styleHome.css">
+
+  <script src="https://www.gstatic.com/firebasejs/5.3.1/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    const config = {
+      apiKey: "AIzaSyDK2Ta8nwPM7UWDdUHYrVVx5Vof0k0vuFY",
+      authDomain: "redsocial-urpi.firebaseapp.com",
+      databaseURL: "https://redsocial-urpi.firebaseio.com",
+      projectId: "redsocial-urpi",
+      storageBucket: "redsocial-urpi.appspot.com",
+      messagingSenderId: "430758923648"
+    };
+    firebase.initializeApp(config);
+  </script>
+
 </head>
 <!--SE TRABAJARÁ CON 2 HTML LOGIN Y REGISTER SIN BOTÓN "CERRAR SESIÓN" -->
+
 <body>
   <!--Navbar para la parte superior :Logo en vista diferente ,perfil y cerrar sesión-->
 <nav class="green ">
@@ -90,34 +106,9 @@
         </select>
       </div>
     </div>
-</div>
-<!--Aquí finaliza el input de postear  !-->
-<!--Aquí se encuentra el espacio para los post publicados,editar el post  !-->
-<div class="row">
-    <div class="z-depth-3 input-field col s10">
-        <p>Possssssssssssst</p>
-        <p>Aquí irá cada post publicado</p>
-        <h4 id="postPublished"></h4>
-        <h4>.....</h4>
-    </div>
-    <br>
-  <button type="submit" id="buttonAdd" class="btn orange">Editar</button>
-  <button style="display: none" id="buttonUpdate" class="btn btn-success">Update task</button>
-  <button style="display: none" id="buttonCancel" class="btn btn-danger">Cancel</button>
-  <!-- Modal Trigger -->
-  <a class="waves-effect  btn yellow darken-2 modal-trigger" href="#modal1">Eliminar</a>
-  <!-- Modal Structure -->
-  <div id="modal1" class="modal">
-      <div class="modal-content">
-      <h5>¿Estás seguro que deseas eliminar esta publicación?</h5>
-      <p></p>
-    </div>
-    <div class="modal-footer">
-        <a href="#!" class="modal-close waves-effect waves-green btn-flat">¡No!</a>
-      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Si,deseo eliminarlo.</a>
-    </div>
-  </div>
-</div>
+    <!--Aquí finaliza el input de postear  !-->
+    <!--Aquí se encuentra el espacio para los post publicados,editar el post  !-->
+ </div>
 <!--Aquí finaliza el input de postear  !-->
 <!--Aquí se encuentra el espacio para los post publicados,editar el post  !-->
 <div class="row">
@@ -134,22 +125,22 @@
   <!-- Modal Trigger -->
   <a class="waves-effect  btn yellow darken-2 modal-trigger" href="#modal1">Eliminar</a>
 
-  <!-- Modal Structure -->
-  <div id="modal1" class="modal">
-    <div class="modal-content">
-      <h5>¿Estás seguro que deseas eliminar esta publicación?</h5>
-      <p></p>
+      <!-- Modal Structure -->
+      <div id="modal1" class="modal">
+        <div class="modal-content">
+          <h5>¿Estás seguro que deseas eliminar esta publicación?</h5>
+          <p></p>
+        </div>
+        <div class="modal-footer">
+          <a href="#!" class="modal-close waves-effect waves-green btn-flat">¡No!</a>
+          <a href="#!" class="modal-close waves-effect waves-green btn-flat">Si,deseo eliminarlo.</a>
+        </div>
+      </div>
     </div>
-    <div class="modal-footer">
-        <a href="#!" class="modal-close waves-effect waves-green btn-flat">¡No!</a>
-      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Si,deseo eliminarlo.</a>
-    </div>
-  </div>
-</div>
-<!--Aquí finaliza el input de postear  !-->
-<!--Aquí se encuentra el espacio para los post publicados,editar el post  !-->
-<div class="row">
-    <div class="z-depth-3 input-field col s10">
+    <!--Aquí finaliza el input de postear  !-->
+    <!--Aquí se encuentra el espacio para los post publicados,editar el post  !-->
+    <div class="row">
+      <div class="z-depth-3 input-field col s10">
         <p>Possssssssssssst</p>
         <p>Aquí irá cada post publicado</p>
         <h4 id="postPublished"></h4>
@@ -162,33 +153,44 @@
   <!-- Modal Trigger -->
   <a class="waves-effect  btn yellow darken-2 modal-trigger" href="#modal1">Eliminar</a>
 
-  <!-- Modal Structure -->
-  <div id="modal1" class="modal">
-    <div class="modal-content">
-      <h5>¿Estás seguro que deseas eliminar esta publicación?</h5>
-      <p></p>
+      <!-- Modal Structure -->
+      <div id="modal1" class="modal">
+        <div class="modal-content">
+          <h5>¿Estás seguro que deseas eliminar esta publicación?</h5>
+          <p></p>
+        </div>
+        <div class="modal-footer">
+          <a href="#!" class="modal-close waves-effect waves-green btn-flat">¡No!</a>
+          <a href="#!" class="modal-close waves-effect waves-green btn-flat">Si,deseo eliminarlo.</a>
+        </div>
+      </div>
     </div>
-    <div class="modal-footer">
-        <a href="#!" class="modal-close waves-effect waves-green btn-flat">¡No!</a>
-      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Si,deseo eliminarlo.</a>
-    </div>
-  </div>
-</div>
-<!--Aquí finaliza el input de postear  !-->
-<!--Aquí se encuentra el espacio para los post publicados,editar el post  !-->
-<div class="row">
-    <div class="z-depth-3 input-field col s10">
+    <!--Aquí finaliza el input de postear  !-->
+    <!--Aquí se encuentra el espacio para los post publicados,editar el post  !-->
+    <div class="row">
+      <div class="z-depth-3 input-field col s10">
         <p>Possssssssssssst</p>
         <p>Aquí irá cada post publicado</p>
         <h4 id="postPublished"></h4>
         <h4>.....</h4>
+      </div>
+      <br>
+      <button type="submit" id="buttonAdd" class="btn orange">Editar</button>
+      <!-- Modal Trigger -->
+      <a class="waves-effect  btn yellow darken-2 modal-trigger" href="#modal1">Eliminar</a>
+      <!-- Modal Structure -->
+      <div id="modal1" class="modal">
+        <div class="modal-content">
+          <h5>¿Estás seguro que deseas eliminar esta publicación?</h5>
+          <p></p>
+        </div>
+        <div class="modal-footer">
+          <a href="#!" class="modal-close waves-effect waves-green btn-flat">¡No!</a>
+          <a href="#!" class="modal-close waves-effect waves-green btn-flat">Si,deseo eliminarlo.</a>
+        </div>
+      </div>
     </div>
     <br>
-  <button type="submit" id="buttonAdd" class="btn orange">Editar</button>
-  <button style="display: none" id="buttonUpdate" class="btn btn-success">Update task</button>
-  <button style="display: none" id="buttonCancel" class="btn btn-danger">Cancel</button>
-  <!-- Modal Trigger -->
-  <a class="waves-effect  btn yellow darken-2 modal-trigger" href="#modal1">Eliminar</a>
   <!-- Modal Structure -->
   <div id="modal1" class="modal">
     <div class="modal-content">
@@ -217,53 +219,38 @@
   <!-- Modal Trigger -->
   <a class="waves-effect  btn yellow darken-2 modal-trigger" href="#modal1">Eliminar</a>
 
-  <!-- Modal Structure -->
-  <div id="modal1" class="modal">
-    <div class="modal-content">
-      <h5>¿Estás seguro que deseas eliminar esta publicación?</h5>
-      <p></p>
+      <!-- Modal Structure -->
+      <div id="modal1" class="modal">
+        <div class="modal-content">
+          <h5>¿Estás seguro que deseas eliminar esta publicación?</h5>
+          <p></p>
+        </div>
+        <div class="modal-footer">
+          <a href="#!" class="modal-close waves-effect waves-green btn-flat">¡No!</a>
+          <a href="#!" class="modal-close waves-effect waves-green btn-flat">Si,deseo eliminarlo.</a>
+        </div>
+      </div>
     </div>
-    <div class="modal-footer">
-        <a href="#!" class="modal-close waves-effect waves-green btn-flat">¡No!</a>
-      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Si,deseo eliminarlo.</a>
-    </div>
-  </div>
-</div>
-<!--Aquí finaliza el input de postear  !-->
+    <!--Aquí finaliza el input de postear  !-->
 
-</section>
-   <!--Aquí termina visualiza el input de postear - todos los elementos requeridos para el muro -->
-  <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script>
-  <script>
-    // Iniciando Firebase
-    const config = {
-      apiKey: "AIzaSyDK2Ta8nwPM7UWDdUHYrVVx5Vof0k0vuFY",
-      authDomain: "redsocial-urpi.firebaseapp.com",
-      databaseURL: "https://redsocial-urpi.firebaseio.com",
-      projectId: "redsocial-urpi",
-      storageBucket: "redsocial-urpi.appspot.com",
-      messagingSenderId: "430758923648"
-    };
-    firebase.initializeApp(config);
-
-  </script>
+  </section>
+  <!--Aquí termina visualiza el input de postear - todos los elementos requeridos para el muro -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script>
- $(document).ready(function(){
-    $('.sidenav').sidenav();
-  });
-$(document).ready(function(){
-  $('.modal').modal();
-});
-$(document).ready(function(){
-    $('.pushpin').pushpin();
-});
+    $(document).ready(() => {
+      $('.sidenav').sidenav();
+    });
+    $(document).ready(function () {
+      $('.modal').modal();
+    });
+    $(document).ready(function () {
+      $('.pushpin').pushpin();
+    });
   </script>
-  <script src="main2.js"></script>
-  <script src="data2.js"></script>
-
   <!-- Compilando JavaScript con Materialize-->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+  <script src="data2.js"></script>
+  <script src="main2.js"></script>
 </body>
 
 </html>

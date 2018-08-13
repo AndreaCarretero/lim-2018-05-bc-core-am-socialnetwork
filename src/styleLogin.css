@@ -2,7 +2,18 @@ body{
   font-family: 'Modern Antiqua', cursive;
   font-family: 'Eczar', serif;
   color: rgb(255, 255, 255);
+  margin: 0;
 }
+video{
+  min-width: 100%;
+  min-height: 100%;
+  position: fixed;
+}
+.section{
+  background-color: white;
+  padding-left:11.9%;
+}
+
 #emailLogin{
   background-color: rgba(245, 241, 241, 0.719);
   border:  0.05em solid #A8A8A8;
@@ -19,9 +30,33 @@ body{
 .btn-flat-small grey{
   border-radius: 2em;
 }
-.registerB{
-  background-color: rgba(245, 241, 241, 0.801);
+h5{
+  color:black
+}
+slider{
+  background-size: 0.1em;
+}
+a{
+  color:black;
+}
+h6{
+  color:black;
+}
+#nameR{
+  background-color: rgba(245, 241, 241, 0.719);
+  border:  0.05em solid #A8A8A8;
+  border-radius: 1em;
+}
+#emailR{
+  background-color: rgba(245, 241, 241, 0.719);
+  border:  0.05em solid #A8A8A8;
+  border-radius: 1em; 
+}
+#passwordR{
+  background-color: rgba(245, 241, 241, 0.719);
   border: 0.05em solid #A8A8A8;
   border-radius: 1em;
-  padding: 1em;
+}
+h5{
+  text-emphasis-color: white;
 }

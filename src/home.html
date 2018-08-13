@@ -32,82 +32,94 @@
 
 <body>
   <!--Navbar para la parte superior :Logo en vista diferente ,perfil y cerrar sesión-->
-<nav class="green ">
-  <div class="nav-wrapper ">
-    <a class="brand-logo center" title="logoDiferente" href="home.html">
-      <img src="../images/vistaLogo.png" alt="vistaDiferenteLogo" />
-    </a>
-    <a href="#" data-target="mobile-demo" class="sidenav-trigger">
-      <i class="material-icons">menu</i>
-    </a>
-    <ul class="right hide-on-med-and-down">
-      <li>
-        <a href="home.html">Explorar</a>
-      </li>
-      <li>
-        <a href="home.html">Mi perfil</a>
-      </li>
-      <li>
-        <a href="home.html">Configuración</a>
-      </li>
-      <li>
-        <a href="home.html">-</a>
-      </li>
-      <button id="logOutButton" class="btn red waves-effect col s " onclick="logout()"> Cerrar Sesión</button>
-    </ul>
-  </div>
-  <!--Aquí finaliza nav para desktop-->
-</nav>
-<!--Nav para móvil-->
-<ul class="sidenav" id="mobile-demo">
-  <li>
-    <a href="home.html">Mi perfil</a>
-  </li>
-  <li>
-    <a href="home.html">Configuración</a>
-  </li>
-  <li>
-    <a href="home.html">Explorar</a>
-  </li>
-  <button id="logOutButton" class="btn  red waves-effect col s " onclick="logout()"> Cerrar Sesión</button>
-</ul>
-<!--Aquí finaliza nav para móvil-->
-</nav>
-<!--Aquí se visualiza el input de postear - todos los elementos requeridos para el muro -->
-<section class="section container">
-  <br>
-  <br>
-<div class="row section container center align">
-    <a class="waves-effect  btn red modal-trigger" href="#modal1">¿Quiénes somos?</a>
-    <!-- Modal Structure -->
-    <div id="modal1" class="modal">
-       <div class="modal-content">
-        <h5>Somos dos ansiosas por conocer a nuestro Perú. <br> *Somos como tú,si,como tú que aprendes mientras viajas. <br> *Como tú también,quien colecciona experiencias en imágenes,quien se inspira observando.</h5>
-       </div>
+  <nav class="green ">
+    <div class="nav-wrapper ">
+      <a class="brand-logo center" title="logoDiferente" href="home.html">
+        <img src="../images/vistaLogo.png" alt="vistaDiferenteLogo" />
+      </a>
+      <a href="#" data-target="mobile-demo" class="sidenav-trigger">
+        <i class="material-icons">menu</i>
+      </a>
+      <ul class="right hide-on-med-and-down">
+        <li>
+          <a href="home.html">Explorar</a>
+        </li>
+        <li>
+          <a href="home.html">Mi perfil</a>
+        </li>
+        <li>
+          <a href="home.html">Configuración</a>
+        </li>
+        <li>
+          <a href="home.html">-</a>
+        </li>
+        <button id="logOutButton" class="btn red waves-effect col s " onclick="logout()"> Cerrar Sesión</button>
+      </ul>
     </div>
-    <a class="waves-effect  btn orange modal-trigger " href="#modal2">¿Para qué es esto?</a>
-    <div id="modal2" class="modal">
-        <div class="modal-content">
-         <h5>Aquí te expresas,estás a salvo. <br> ¡Únete a los viajeros que tienen la última noticia del lugar! <br> Esto es para aprender compartiendo,estas son historias contadas, esto es Perú.  </h5>
-        </div>
-     </div> <br>
+    <!--Aquí finaliza nav para desktop-->
+  </nav>
+  <!--Nav para móvil-->
+  <ul class="sidenav" id="mobile-demo">
+    <li>
+      <a href="home.html">Mi perfil</a>
+    </li>
+    <li>
+      <a href="home.html">Configuración</a>
+    </li>
+    <li>
+      <a href="home.html">Explorar</a>
+    </li>
+    <button id="logOutButton" class="btn  red waves-effect col s " onclick="logout()"> Cerrar Sesión</button>
+  </ul>
+  <!--Aquí finaliza nav para móvil-->
+  </nav>
+  <!--Aquí se visualiza el input de postear - todos los elementos requeridos para el muro -->
+  <section class="section container">
     <br>
-  <form class="col s11" action="home.html" id="formPrivacity">Para ser parte de la comunidad comienza contando todos los tips y datos importantes que tengas del Perú.
-   <br> 
-   <br> <div class="input-field col s12">
-      <textarea id="textarea2" class="materialize-textarea" data-length="700"></textarea>
-      <label for="textarea2">Comparte tu experiencia</label>
-      <button class="btn green  right" id="publicarPost" onclick=""> Publicar</button>
-      <div class="col 3">
-        <select  disable="disable" id="privacity">
-          <option value="ds" class="value">Privacidad</option>
-          <option value="sds" class="value">Todos</option>
-          <option value="sds" class="value">Solo yo</option>
-        </select>
+    <br>
+    <div class="row section container center align">
+      <a class="waves-effect  btn red modal-trigger" href="#modal1">¿Quiénes somos?</a>
+      <!-- Modal Structure -->
+      <div id="modal1" class="modal">
+        <div class="modal-content">
+          <h5>Somos dos ansiosas por conocer a nuestro Perú.
+            <br> *Somos como tú,si,como tú que aprendes mientras viajas.
+            <br> *Como tú también,quien colecciona experiencias en imágenes,quien se inspira observando.</h5>
+        </div>
       </div>
+      <a class="waves-effect  btn orange modal-trigger " href="#modal2">¿Para qué es esto?</a>
+      <div id="modal2" class="modal">
+        <div class="modal-content">
+          <h5>Aquí te expresas,estás a salvo.
+            <br> ¡Únete a los viajeros que tienen la última noticia del lugar!
+            <br> Esto es para aprender compartiendo,estas son historias contadas, esto es Perú. </h5>
+        </div>
+      </div>
+      <br>
+      <br>
+      <form class="col s11" action="home.html" id="formPrivacity">Para ser parte de la comunidad comienza contando todos los tips y datos importantes que tengas del Perú.
+        <br>
+        <br>
+        <div class="input-field col s12">
+          <textarea id="textarea2" class="materialize-textarea" data-length="700"></textarea>
+          <label for="textarea2">Comparte tu experiencia</label>
+          <button class="btn green  right" id="publicarPost" onclick="pintar()"> Publicar</button>
+          <div class="col 3">
+            <select disable="disable" id="privacity">
+              <option value="ds" class="value">Privacidad</option>
+              <option value="sds" class="value">Todos</option>
+              <option value="sds" class="value">Solo yo</option>
+            </select>
+          </div>
+        </div>
+     </div>
+     <!--Aquí se encuentra el espacio para los post publicados,editar el post  !-->
+    <div class="row" id = "boxPosteado">
+
     </div>
+    <br>
     <!--Aquí finaliza el input de postear  !-->
-    <!--Aquí se encuentra el espacio para los post publicados,editar el post  !-->
+
   </section>
   <!--Aquí termina visualiza el input de postear - todos los elementos requeridos para el muro -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -124,9 +136,8 @@
   </script>
   <!-- Compilando JavaScript con Materialize-->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
-  <script src="main2.js"></script>
   <script src="data2.js"></script>
-
+  <script src="main2.js"></script>
 </body>
 
 </html>

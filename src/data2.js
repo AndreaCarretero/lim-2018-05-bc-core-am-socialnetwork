@@ -9,7 +9,7 @@ const savePost = () => {//esta funcion es la que guarda el ID, EMAIL Y STRING(po
 	db.collection("POST`s").add({
 		id: idUserInLine,
 		email: emailUserInLine,
-		post: boxPost.value
+		post: textarea2.value
 	})
 		.then(function (docRef) {
 			// console.log("Document written with ID: ", docRef.id);
@@ -29,34 +29,22 @@ const readPost = () =>{
 		querySnapshot.forEach((doc) => {
 			console.log(`${doc.id} => ${doc.data().post}`);
 			boxPosteado.innerHTML += `
-			<div class="z-depth-3 input-field col s10" >
-        <p> ${doc.data().post}</p>
+			<br>
+			<br><div class="z-depth-3 input-field col s10">
+        <p>${doc.data().post}</p>
       </div>
       <br>
       <button type="submit" id="buttonAdd" class="btn orange">Editar</button>
-      <button style="display: none" id="buttonUpdate" class="btn btn-success">Update task</button>
-      <button style="display: none" id="buttonCancel" class="btn btn-danger">Cancel</button>
       <!-- Modal Trigger -->
-      <a class="waves-effect  btn modal-trigger" href="#modal1">Eliminar</a>
-      <!-- Modal Structure -->
-      <div id="modal1" class="modal">
-        <div class="modal-content">
-          <h5>¿Estás seguro que deseas eliminar esta publicación?</h5>
-          <p></p>
-        </div>
-        <div class="modal-footer">
-          <a href="#!" class="modal-close waves-effect waves-green btn-flat">¡No!</a>
-          <a href="#!" class="modal-close waves-effect waves-green btn-flat"  >Si,deseo eliminarlo.</a>
-        </div>
-      </div>
+      <a class="waves-effect btn yellow darken-2" onclick = deletePost('${doc.id}')>Eliminar</a>
 			`
 		});
 	});
 }
-// readPost();
+readPost();
 
-const deletePost = () => {
-	db.collection("POST`s").doc().delete(a).then(function () {
+const deletePost = (a) => {
+	db.collection("POST`s").doc(a).delete().then(function () {
 		console.log("Document successfully deleted!");
 	}).catch(function (error) {
 		console.error("Error removing document: ", error);

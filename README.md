@@ -1,30 +1,63 @@
-# Creando una Red Social
 
-#Red Social en camino: Urpi
-Esta es una red social enfocada en la educación a través del compartir experiencias, datos, etc.; con la intención de fomentar el aprendizaje a mediante una plataforma diferente como una red social. Y así dar la posibilidad de fomentar, inspirar y enseñar acerca del Perú.
+  # Proyecto 3- Red social en camino 
+
+
+#### Preámbulo:                                
+Instagram, Snapchat, Twitter, Facebook, Twitch, Linkedin, etc. Las redes sociales han invadido nuestras vidas. Las amamos u odiamos, y muchxs no podemos vivir sin ellas. Hay redes sociales de todo tipo y para todo tipo de intereses. Por ejemplo, en una ronda de financiamiento con inversionistas, se presentó una red social para químicos en la que los usuarios podían publicar artículos sobre sus investigaciones, comentar en los artículos de sus colegas, y filtrar artículos de acuerdo a determinadas etiquetas o su popularidad, lo más reciente, o lo más comentado.
+
+#### Introducción:
+Priscilla Ruíz,protagonista de exploraciones a la Antártida,emprendedora de su propia fundación "ReciclandoVerde" nos contactó para  crear una red social. No nos brinda información específica de lo que quiere mostrar o el público objetivo.Menciona  ciertos temas en los que le gustaría invertir pero  nos enfatiz la ideología que tenemos en común: la voluntad de compartir nuestras experiencias mientras viajamos de aquí para allá.Ella confía en nosotras,quiere que hagamos de este proyecto,lo mejor que podamos  y que luego la convenzamos de lanzar la red social al mercado.
+
 
 ## Nuestra historia comienza así:
 ¿Red Social? ¿Educación? ¿Perú? ¿Aprender? ¿Enseñar? ¿Qué nuestro país tiene tanto que mostrarnos?
-Este equipo piensa distinto, pensó distinto al momento de pensar cuál sería el tema al crear alguna Red Social.
+Este equipo piensa distinto, pensó distinto al momento de decidir cuál sería el tema al crear una Red Social.
 
   ![imagen donde se piensa en hablar sobre viajes](https://scontent-scl1-1.xx.fbcdn.net/v/t1.15752-9/37421179_1719512124768932_8314206616538841088_n.png?_nc_cat=0&oh=71ccce2d5dedad4a1bb79c894ae6c318&oe=5BCA0EAF)
 
-    Bastó esta imagen para tener claro hacia dónde y quienes iríamos en este proyecto. Coincidentemente nosotras tres pensamos en unión-conexión-aprendizaje-respeto y libertad de expresión cuando nos referíamos a Redes Sociales. Estos conceptos abren puertas a una investigación bastante dedicada para obtener resultados más certeros.
+    Esta imagen no tiene significado a simple vista y de eso se trata, de darle uno.Bastó ver esta a este grupo de personas sonriendo  para tener claro hacia dónde y para  quienes estaría dirigido este proyecto. Coincidentemente nosotras tres pensamos en: unión-conexión-aprendizaje-libertad de expresión cuando nos referíamos a nuestro país en el sector turístico. Estos conceptos abren puertas a una investigación dedicada para obtener resultados, diríamos bastante certeros.
+    
+## Red Social en camino: Urpi
 
-#### 1) Definición del producto
+Muchos estarán preguntándose: ¿Qué significa Urpi? palabra en Quechua que tiene el significado de "paloma", pues decidimos darle una connotación simbólica a todos aquellos viajeros  que van y vienen con emoción de infinitos lugares, recolectando historias,sumando personas en su vida ,aquellos que aprenden "volando" de "viaje en viaje".
 
-¿Cómo conociste el mercado de las redes sociales?, ¿cómo descubriste las necesidades de los usuarios? y ¿cómo llegaste a la definición final de tu producto?
+Esta es la red social enfocada en la educación a través del compartir experiencias, datos curiosos,"tips viajeros" de cualquier lugar del Perú, con la intención de fomentar el aprendizaje  mediante una plataforma diferente.Urpi es diferente,es libre.Urpi es para aquellos que viajan compartiendo y para los que se inspiran viendo historias con "info" actualizada de ese preciso lugar o alrededores. Urpi recolecta todas las experiencias que muchos tienen por contar.
 
-Una de las formas en la que descubrimos la necesidad esencial del usuario fue en la quinta pregunta de nuestro primer formulario
-"¿Conoces alguna RED SOCIAL que brinde "material" de y para viajer@s?" el 91.4 % (53 personas hasta la fecha del 24 de Julio respondieron que no) y las que mencionaron que sí, hicieron mención de las siguientes:
+##            - Definición del producto
 
--TripAdvisor
--Worldpackers
--Airbnb
+
+-
+¿Cómo conociste el mercado de las redes sociales? :   
+ Tal como mencionamos en el preámbulo,las redes sociales nos han invadido la vista a diario con sus opciones múltiples .Ya las conocemos,las utilizamos, ya existen para cada público,para cada interés. Sin embargo decidimos adentrarnos más con el concepto aplicando uno de nuestros valores bien impregnados;el autoaprendizaje y encontramos :
+
+ >Una Red Social es una estructura social integrada por personas, organizaciones o entidades que se encuentran conectadas entre sí por una o varios tipos de relaciones,tales pueden ser  de amistad, parentesco, económicas,intereses comunes, experimentación de las mismas creencias, entre otras posibilidades.
+
+... vía "Definicion ABC"
+https://www.definicionabc.com/social/red-social.php   
+
+
+-
+### ¿Cómo descubriste las necesidades de los usuarios? 
+  Muchas personas viajan, muchos se enamoran conociendo algo nuevo o hasta se vuelven a enamorar de lo ya conocido .
+  >Según Mincetur actualizó la cifra de turistas extranjeros que visitaron el Perú hasta el mes de diciembre del 2017. Según cifras oficiales, hasta diciembre del 2017 llegaron al Perú 4 032339 turistas extranjeros, lo que representó un crecimiento de 7,7%, respecto al 2016, año en el que ingresaron al país 3 744 461 turistas. Es decir, el año pasado llegaron 287 878 turistas extranjeros más que en 2016.
+ Una de las formas en la que descubrimos la necesidad esencial del usuario fue en la quinta pregunta de nuestro primer formulario:
+"¿Conoces alguna RED SOCIAL que brinde "material" de/ y para viajer@s?".  
+El 91.4 % (53 personas hasta la fecha del 24 de Julio respondieron que no) y las que marcaron  sí, hicieron mención de las siguientes:
+
+-TripAdvisor  
+-Worldpackers  
+-Airbnb  
 -Trovit
 
-+Estas herramientas hacen referencia a hoteles, alojamiento, es decir, tienen un tema en específico; contenido informativo y seleccionado para una necesidad real; la estadía. Sin embargo, pudimos inferir no existe hasta el momento alguna página web-blog -app o lo que fuese (peruana y/o lugares de todo el Perú)
-+Añadiendo a esto, realizamos una búsqueda extensa de los blog-foros-páginas etc.* digitales* habidos y por haber donde personas comenten sobre x lugar, precios, novedades, rutas distintas, variada y fundamental información al momento de viajar. ¿Qué sucedió? páginas sin imágenes, foros desactualizados, información no verídica, datos no confirmados por demás grupos, es decir; encontramos LA falta de un "lugar" confiable y proveedor de lo esencial para viajar a CUALQUIER LUGAR DEL PERÚ.
++Estas herramientas hacen referencia a hoteles, es decir, tienen un tema en específico; contenido informativo y seleccionado para una necesidad real; la estadía,alojamiento. Sin embargo, pudimos inferir que  no existe hasta el momento alguna página web-blog -app o lo que fuese donde más que obtener un like por publicación , su enfoque se base en la comunidad libre de viajeros donde puedan compartir todas las últimas noticias del lugar(Perú) que otros puedan saben y así generar una cultura de educación.
+
++Añadiendo a esto, realizamos una búsqueda extensa de los blog-foros-páginas *digitales* habidos y por haber donde personas , precios, novedades, rutas distintas, variada y fundamental información al momento de viajar. ¿Qué sucedió? páginas sin imágenes, foros desactualizados, información no verídica, datos no confirmados por demás grupos, es decir; encontramos LA falta de un "lugar" confiable y proveedor de lo esencial para viajar a CUALQUIER LUGAR DEL PERÚ.
+
+
+-
+
+### ¿Cómo llegaste a la definición final de tu producto?
+
 
 Aquí se adjuntan
 -fotos de entrevistas, cuestionarios y/o sketches
@@ -73,21 +106,7 @@ Recordar que :
 Alta fidelidad:
  (https://www.figma.com/proto/XEESZc0hxzCN8wKqISQTTXbj/Untitled?node-id=1%3A2&scaling=scale-down)
 
---------------------------------------------------------------------------------------------------
-Preguntas:
-* Cuáles son los elementos básicos que tiene una red social.
-* Quiénes son los principales usuarios de producto.
-* Cómo descubriste las necesidades de los usuarios.
-* Qué problema resuelve el producto para estos usuarios.
-* Cuáles son los objetivos de estos usuarios en relación con el producto.
-* Cuáles son las principales funcionalidades del producto y cuál es su prioridad.
-* Cómo verificaste que el producto les está resolviendo sus problemas.
-* Cómo te asegurarás que estos usuarios usen este producto.
-
-
-
-
-
+------------------------------------------------------
 
 * Hacer un _benchmark_ de las principales redes sociales.
 * Hacer al menos 2 o 3 entrevistas con usuarios.
@@ -113,4 +132,3 @@ Preguntas:
 * [ ] Link/screenshots del prototipo de alta fidelidad.
 * [ ] Conclusiones de testing con el prototipo de alta fidelidad con usuarios.
 * [ ] Conclusiones de testing con el producto en HTML.
-

@@ -18,3 +18,4 @@ const pintar = () => {//el value del post ya se guarda, pero no consolea
   }
 
 }
+console.log(userNow);

@@ -19,126 +19,92 @@
 
 </head>
 <!--SE TRABAJARÁ CON 2 HTML LOGIN Y REGISTER SIN BOTÓN "CERRAR SESIÓN" -->
-<body>
-  <!--¡Elaborando slides para primera vista!-->
-<div class="slider">
-    <ul class="slides">
-      <li>
-        <img  class="responsive-img" src="https://i.pinimg.com/564x/6f/2e/6a/6f2e6aa9b45559107fc8c8ee4d9768e4.jpg">
-        <!-- random image -->
-        <div class="caption center-align">
-          <h3>¿Conoces a tu Perú?</h3>
-          <h5 class="light grey-text text-lighten-3">Viaja</h5>
+<body>   
+<video src="../images/peru.mp4" autoplay loop muted>
+</video>
+<section class=" card-content section container ">
+  <div class="">
+    <div class="row">
+      <div class="card col  ">
+        <!--PRIMER SECTION LOGIN -->
+        <!--Aquí se crea "container" para centrar todo lo que esté dentro de este div-->
+        <div class=" center align  ">
+          <img class="responsive-img  circle" src="../images/logocircle.png" alt="sevenColors">
+          <h5> Sé libre. <br> Conoce a nuestro Perú a través de tips viajeros.
+            <br> Comparte datos curiosos para todos aquellos que visiten este país.</h5>
         </div>
-      </li>
-      <li>
-        <img  class="responsive-img" src="https://i.pinimg.com/564x/7d/f1/d7/7df1d7d833f9b1a6347eb9b21476f2ce.jpg">
-        <!-- random image -->
-        <div class="caption left-align">
-          <h3>¿Te gusta viajar?</h3>
-          <h5 class="light grey-text text-lighten-3">Inpírate</h5>
-        </div>
-      </li>
-      <li>
-        <img  class="responsive-img" src="https://i.pinimg.com/564x/8a/f5/a2/8af5a2807c80da2902c7c86f6d5cd608.jpg">
-        <!-- random image -->
-        <div class="caption right-align">
-          <h3>Explora</h3>
-          <h5 class="light grey-text text-lighten-3">lala</h5>
-        </div>
-      </li>
-      <li>
-        <img class="responsive-img" src="https://i.pinimg.com/564x/f8/0b/d4/f80bd4eef4449ae673d49327800484a2.jpg">
-        <!-- random image -->
-        <div class="caption center-align">
-          <h3>Andrea logró poner esto!</h3>
-          <h5 class="light grey-text text-lighten-3">Yujuuuu</h5>
-        </div>
-      </li>
-    </ul>
-  </div>
-    <!--Aquí acaban los 4 slides para primera vista-->
-   <!--PRIMER SECTION LOGIN -->
-  <!-- Aquí se crea "container" para centrar todo lo que esté dentro de este div -->
-  <section class="container section  ">
-      <div class="center align ">
-        <img class="responsive-img  circle" src="../images/logocircle.png" alt="sevenColors">
-        <h5>Sé libre.
-          <br> Comparte y conoce a nuestro Perú.</h5>
-      </div>
-      <!--_________________INICIO DIV DE LOGIN______________________ -->
-      <div class="container " id="loginUser">
-        <div>
-          <div class="container ">
-            <input class=" validate" id="emailLogin" type="email" placeholder=" &#128273;Email" required>
-            <input class=" validate" id="passwordLogin" type="password" placeholder=" &#128272;Contraseña" required>
+        <!--_________________INICIO DIV DE LOGIN______________________ -->
+        <div id="loginUser">
+          <div>
+            <div class="container ">
+              <input class=" validate" id="emailLogin" type="email" placeholder=" &#128273;Email" required>
+              <input class=" validate" id="passwordLogin" type="password" placeholder=" &#128272;Contraseña" required>
+            </div>
+            <div class="center align">
+              <button class="btn orange" id="login" onclick="login()"> Iniciar sesión</button>
+              <br>
+              <br>
+              <a href="login.html">¿Olvidaste la contraseña?</a>
+            </div>
+            <div class="section center align">
+              <h6>o Ingresa con</h6>
+              <button class="btn blue darken-4" id="loginFacebook" onclick="loginFacebook()"> Conéctate con Facebook</button>
+              <button class="btn red accent-4" id="loginGoogle" onclick="loginGoogle()"> Conéctate con Google</button>
+            </div>
+            <div class="center align">
+              <h6> ¿No tienes una cuenta?</h6>
+              <button id="logInButton" onclick="createAccount()" class="btn  ">!Crea tu cuenta!</button>
+            </div>
           </div>
+        </div>
+        <!--__________________FIN DIV DE LOGIN________________________ -->
+        <!--_________________INICIO DIV DE REGISTER______________________ -->
+        <div  id="registerUser">
+          <input class="btn green" type="button" onclick="back()" íd="buttonBack" name="volver atrás" value=" < ">
+          <h5>Únete a esta familia</h5>
+          <div >
+            <input id="nameR" type="text" placeholder="🙌-Nombre y Apellidos" required>
+            <input id="emailR" type="email" placeholder=" 🙏-Correo Electrónico" required>
+            <input id="passwordR" type="password" placeholder=" 🙊-Contraseña" required>
+          </div>
+          <!--  <input id"politics" type="checkbox" name="l"> 
+          <p> Acepto las condiciones de Servicio y Políticas de Urpi </p> -->
           <div class="center align">
-            <button class="btn" id="login" onclick="login()"> Iniciar sesión</button>
-            <br>
-            <br>
-            <button class="btn  green " name="olvidasteContraseña">¿Olvidaste la contraseña?</button>
-          </div>
-          <div class="section center align">
-            <h6>o Ingresa con</h6>
-            <br>
-            <button class="btn blue darken-4" id="loginFacebook" onclick="loginFacebook()"> Conéctate con Facebook</button>
-            <button class="btn red accent-4" id="loginGoogle"onclick="loginGoogle()"> Conéctate con Google</button>
-          </div>
-          <div class="center align">
-            <h6> ¿No tienes una cuenta?</h6>
-            <button id="logInButton" onclick="createAccount()" class="btn  ">!Crea tu cuenta!</button>
+            <button id="register" onclick="register()" class="btn orange ">Registrarme</button>
+            <h6>o Regístrate con</h6>
+            <button class="btn blue darken-4" id="loginFacebook" onclick="loginFacebook()">Conéctate con Facebook</button>
+            <button class="btn red accent-4" id="loginGoogle" onclick="loginGoogle()">Conéctate con Google</button>
           </div>
         </div>
-      </div>
-      <!--__________________FIN DIV DE LOGIN________________________ -->
-      <!--_________________INICIO DIV DE REGISTER______________________ -->
-      <div class="container" id="registerUser">
-        <input class="btn green" type="button" onclick="back()" íd="buttonBack" name="volver atrás" value=" < ">
-        <h5>Únete a esta familia</h5>
-        <div class="registerB container">
-          <input id="nameR" type="text" placeholder="🙌-Nombre y Apellidos" required>
-          <input id="emailR" type="email" placeholder=" 🙏-Correo Electrónico" required>
-          <input id="passwordR" type="password" placeholder=" 🙊-Contraseña" required>
-        </div>
-        <!--  <input id"politics" type="checkbox" name="l"> 
-      <p> Acepto las condiciones de Servicio y Políticas de Urpi </p> -->
-        <div class="section center align row">
-          <button id="register" onclick="register()" class="btn orange ">Registrarme</button>
-          <h6>o Regístrate con</h6>
-          <br>
-          <button class="btn blue darken-4" id="loginFacebook" onclick="loginFacebook()">Conéctate con Facebook</button>
-          <button class="btn red accent-4" id="loginGoogle"onclick="loginGoogle()">Conéctate con Google</button>
-        </div>
-      </div>
-      <!--__________________FIN DIV DE REGISTER________________________ -->
-    </section>
-    <!--Aquí finaliza section Register -->
- 
- 
-  <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script>
-  <script>
-    // Iniciando Firebase
-    let config = {
-      apiKey: "AIzaSyDK2Ta8nwPM7UWDdUHYrVVx5Vof0k0vuFY",
-      authDomain: "redsocial-urpi.firebaseapp.com",
-      databaseURL: "https://redsocial-urpi.firebaseio.com",
-      projectId: "redsocial-urpi",
-      storageBucket: "redsocial-urpi.appspot.com",
-      messagingSenderId: "430758923648"
-    };
-    firebase.initializeApp(config);
-  </script>
-  <!-- Compilando JavaScript con Materialize-->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+        <!--__________________FIN DIV DE REGISTER________________________ -->
+</section>
+<!--Aquí finaliza section Register -->
+</div>
+</div>
+</div>
+<script src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script>
+<script>
+  // Iniciando Firebase
+  let config = {
+    apiKey: "AIzaSyDK2Ta8nwPM7UWDdUHYrVVx5Vof0k0vuFY",
+    authDomain: "redsocial-urpi.firebaseapp.com",
+    databaseURL: "https://redsocial-urpi.firebaseio.com",
+    projectId: "redsocial-urpi",
+    storageBucket: "redsocial-urpi.appspot.com",
+    messagingSenderId: "430758923648"
+  };
+  firebase.initializeApp(config);
+</script>
+<!-- Compilando JavaScript con Materialize-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
 <script>
   $(document).ready(function () {
     $('.slider').slider();
   });
 </script>
-  <script src="main.js"></script>
-  <script src="data.js"></script>
+<script src="main.js"></script>
+<script src="data.js"></script>
 </body>
 
 </html>

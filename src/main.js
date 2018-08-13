@@ -28,9 +28,3 @@ window.back = () => {
   loginUser.style.display = "block";
   registerUser.style.display = "none";
 }
-/* Aquí se reconocerá los id de los  botones
-  const loginG= document.getElementById("loginGoogleh");
-  loginG.addEventListener('click',event) =() =>{
-   loginGoogle();
-  }
- */

@@ -20,6 +20,7 @@ const savePost = () => {//esta funcion es la que guarda el ID, EMAIL Y STRING(po
 		});
 	event.preventDefault();
 }
+
 //leer documentos
 const readPost = () => {
 	speech();
@@ -31,11 +32,12 @@ const readPost = () => {
 				`
 			<br>
 			<br><div class="z-depth-3 input-field col s10">
-			<textarea disabled id="elPost" cols="30" rows="10">${doc.data().post}</textarea>
+			<textarea disabled id="elPost-${doc.id}" cols="30" rows="10">${doc.data().post}</textarea>
       </div>
       <br>
 			<button class="waves-effect btn red darken-2" onclick = "deletePost('${doc.id}')">Eliminar</button>
-			<button class="btn orange" id="buttonAdd"  onclick="editPost('${doc.id}', '${doc.data().post}')" >Editar</button>
+			<button class="btn orange" id="buttonAdd-${doc.id}"  onclick="editPost('${doc.id}', '${doc.data().post}')" >Editar</button>
+			<button class="btn blue rigth" >Like</button>
 			`
 		});
 	});
@@ -54,15 +56,14 @@ const deletePost = (id) => {
 }
 
 const editPost = (id, post) => {
-	const cuadroPost = document.getElementById('elPost');
+	const cuadroPost = document.getElementById(`elPost-${id}`);
 	cuadroPost.disabled = false;
-	document.getElementById('elPost').value = post;
-	const button = document.getElementById('buttonAdd');
-
+	document.getElementById(`elPost-${id}`).value = post;
+	const button = document.getElementById(`buttonAdd-${id}`);
 	button.innerHTML = 'Guardar';
 	button.onclick = () => {
-		var washingtonRef = db.collection("POST`s").doc(id);
-		const post = document.getElementById('elPost').value;
+		const washingtonRef = db.collection("POST`s").doc(id);
+		const post = document.getElementById(`elPost-${id}`).value;
 		return washingtonRef.update({
 			post
 		})
@@ -84,6 +85,6 @@ const logout = () => {
 		})
 		.cath();
 }
-const likes = () => {
-	
-}
+
+
+

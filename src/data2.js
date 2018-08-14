@@ -9,18 +9,17 @@ const savePost = () => {//esta funcion es la que guarda el ID, EMAIL Y STRING(po
 	db.collection("POST`s").add({
 		id: idUserInLine,
 		email: emailUserInLine,
-		post: textarea2.value
+		post: textarea2.value,
+		like: 0,
 	})
 		.then((docRef) => {
 			// console.log("Document written with ID: ", docRef.id);
-
 		})
 		.catch((error) => {
 			console.error("Error adding document: ", error);
 		});
 	event.preventDefault();
 }
-
 //leer documentos
 const readPost = () => {
 	speech();
@@ -32,12 +31,12 @@ const readPost = () => {
 				`
 			<br>
 			<br><div class="z-depth-3 input-field col s10">
-			<textarea disabled id="elPost-${doc.id}" cols="30" rows="10">${doc.data().post}</textarea>
+			<textarea class="materialize-textarea textarea-custom-padding" disabled id="elPost-${doc.id}" cols="30" rows="10">${doc.data().post}</textarea>
       </div>
       <br>
-			<button class="waves-effect btn red darken-2" onclick = "deletePost('${doc.id}')">Eliminar</button>
-			<button class="btn orange" id="buttonAdd-${doc.id}"  onclick="editPost('${doc.id}', '${doc.data().post}')" >Editar</button>
-			<button class="btn blue rigth" >Like</button>
+			<button class="waves-effect btn red darken-2 buttons" onclick = "deletePost('${doc.id}')">Eliminar</button>
+			<button class="btn blue rigth buttons" id = "like-${doc.id}" onclick = "likePost('${doc.id}')" >Like</button>
+			<button class="btn orange buttons" id="buttonAdd-${doc.id}"  onclick="editPost('${doc.id}', '${doc.data().post}')" >Editar</button>
 			`
 		});
 	});
@@ -78,6 +77,13 @@ const editPost = (id, post) => {
 			});
 	}
 }
+
+const likePost = (id) => {
+	const contador = `like-${id}`;
+	console.log(contador);
+}
+
+
 const logout = () => {
 	firebase.auth().signOut()
 		.then(() => {

@@ -9,8 +9,8 @@ window.login = () => {
     } else {
       firebase.auth().signInWithEmailAndPassword(emailValue, passwordValue)
         .then(() => {
-          console.log("Usuario con login exitoso")
-				})
+          console.log("Usuario con login exitoso");
+        })
         .catch((error) => {
           alert("Aun no estas registradx ¿Qué esperas comienza a registrarte y veras todos los beneficios; o quizas tu contraseña no es correcta 😨");
         })
@@ -56,7 +56,7 @@ loginFacebook = () => {
   });
   firebase.auth().signInWithPopup(provider)
     .then(() => {
-			console.log("login con facebook");
+      console.log("Login con facebook");
     })
     .catch((error) => {
       console.log("error de firebase >" + error.code);
@@ -69,7 +69,7 @@ loginGoogle = () => {
 	firebase.auth().signInWithPopup(provider)
 	.then((result)=> {
     const token = result.credential.accessToken;
-    const user = result.user;
+    const user= result.user;
   }).catch((error)=> {
     const errorCode = error.code;
     const errorMessage = error.message;
@@ -77,6 +77,4 @@ loginGoogle = () => {
     const credential = error.credential;
   });
 }
-
-
 

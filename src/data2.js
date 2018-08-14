@@ -30,6 +30,7 @@ const readPost = () => {
 			boxPosteado.innerHTML +=
 				`
 			<br>
+			<p> ${doc.data().email} </p>
 			<br><div class="z-depth-3 input-field col s10">
 			<textarea class="materialize-textarea textarea-custom-padding" disabled id="elPost-${doc.id}" cols="30" rows="10">${doc.data().post}</textarea>
       </div>
@@ -39,10 +40,10 @@ const readPost = () => {
 			<button class="btn orange buttons" id="buttonAdd-${doc.id}"  onclick="editPost('${doc.id}', '${doc.data().post}')" >Editar</button>
 			`
 		});
-	});
+	/* 	const buttonLikes= getElementById(${doc.data().id}) */
+	});	
 }
 readPost();
-
 const deletePost = (id) => {
 	const result = confirm("¿Estas segurx que deseas eliminar el post?");
 	if (result == true) {
@@ -53,7 +54,6 @@ const deletePost = (id) => {
 		});
 	}
 }
-
 const editPost = (id, post) => {
 	const cuadroPost = document.getElementById(`elPost-${id}`);
 	cuadroPost.disabled = false;
@@ -67,16 +67,17 @@ const editPost = (id, post) => {
 			post
 		})
 			.then(() => {
-				console.log("Document successfully updated!");
+				console.log('Document successfully updated!');
 				button.innerHTML = 'Editar';
 				button.onclick = editPost;
 			})
 			.catch((error) => {
 				// The document probably doesn't exist.
-				console.error("Error updating document: ", error);
+				console.error('Error updating document: ', error);
 			});
 	}
 }
+
 const likePost = (id,cantActual) => {
 	cantActual ++;
 	const washingtonRef = db.collection("POST`s").doc(id);
@@ -91,11 +92,12 @@ const likePost = (id,cantActual) => {
 				// The document probably doesn't exist.
 				console.error("Error updating document: ", error);
 			});
+
 }
 const logout = () => {
 	firebase.auth().signOut()
 		.then(() => {
-			window.location.assign("login.html");
+			window.location.assign('login.html');
 		})
 		.cath();
 }

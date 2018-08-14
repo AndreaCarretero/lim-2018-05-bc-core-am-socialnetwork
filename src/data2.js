@@ -32,12 +32,11 @@ const readPost = () => {
 				`
 			<br>
 			<br><div class="z-depth-3 input-field col s10">
-        <p>${doc.data().post}</p>
+			<textarea disabled id="elPost" cols="30" rows="10">${doc.data().post}</textarea>
       </div>
       <br>
-      <button type="submit" id="buttonAdd" class="btn orange" onclick = "editPost('${doc.id}','${doc.data().post}')">Editar</button>
-      <!-- Modal Trigger -->
-      <button class="waves-effect btn yellow darken-2" onclick = "deletePost('${doc.id}')">Eliminar</button>
+			<button class="waves-effect btn red darken-2" onclick = "deletePost('${doc.id}')">Eliminar</button>
+			<button class="btn orange" id="buttonAdd"  onclick="editPost('${doc.id}', '${doc.data().post}')" >Editar</button>
 			`
 		});
 	});
@@ -55,34 +54,27 @@ const deletePost = (id) => {
 	}
 }
 
-const editPost = (id, post) => {
+const editPost = (id,post) => {
+	const cuadroPost = document.getElementById('elPost');
+	cuadroPost.disabled = false;
+	document.getElementById('elPost').value = post;
+	const button = document.getElementById('buttonAdd');
 
-	document.getElementById('textarea2').value = post;
-
-	const button = document.getElementById('publicarPost');
-	button.innerHTML = 'Editar';
-
+	button.innerHTML='Guardar';
 	button.onclick = () => {
 		var washingtonRef = db.collection("POST`s").doc(id);
-
+		const post = document.getElementById ('elPost').value;
 		return washingtonRef.update({
-			post: post,
+		post
 		})
-			.then(function () {
-				console.log("Document successfully updated!");
-				button.innerHTML = 'Guardar';
-			})
-			.catch(function (error) {
-				// The document probably doesn't exist.
-				console.error("Error updating document: ", error);
-			});
-	}
-}
-
-logout = () => {
-	firebase.auth().signOut()
 		.then(() => {
-			window.location.assign("login.html");
-		})
-		.cath();
+			console.log("Document successfully updated!");
+			button.innerHTML = 'Editar';
+			button.onclick = editPost;
+	})
+	.catch(function(error) {
+			// The document probably doesn't exist.
+			console.error("Error updating document: ", error);
+	});
+	}
 }

@@ -11,11 +11,11 @@ const savePost = () => {//esta funcion es la que guarda el ID, EMAIL Y STRING(po
 		email: emailUserInLine,
 		post: textarea2.value
 	})
-		.then(function (docRef) {
+		.then((docRef) => {
 			// console.log("Document written with ID: ", docRef.id);
 
 		})
-		.catch(function (error) {
+		.catch((error) => {
 			console.error("Error adding document: ", error);
 		});
 	event.preventDefault();
@@ -46,35 +46,35 @@ readPost();
 const deletePost = (id) => {
 	const result = confirm("¿Estas segurx que deseas eliminar el post?");
 	if (result == true) {
-		db.collection("POST`s").doc(id).delete().then(function () {
+		db.collection("POST`s").doc(id).delete().then(() => {
 			console.log("Document successfully deleted!");
-		}).catch(function (error) {
+		}).catch((error) => {
 			console.error("Error removing document: ", error);
 		});
 	}
 }
 
-const editPost = (id,post) => {
+const editPost = (id, post) => {
 	const cuadroPost = document.getElementById('elPost');
 	cuadroPost.disabled = false;
 	document.getElementById('elPost').value = post;
 	const button = document.getElementById('buttonAdd');
 
-	button.innerHTML='Guardar';
+	button.innerHTML = 'Guardar';
 	button.onclick = () => {
 		var washingtonRef = db.collection("POST`s").doc(id);
-		const post = document.getElementById ('elPost').value;
+		const post = document.getElementById('elPost').value;
 		return washingtonRef.update({
-		post
+			post
 		})
-		.then(() => {
-			console.log("Document successfully updated!");
-			button.innerHTML = 'Editar';
-			button.onclick = editPost;
-	})
-	.catch(function(error) {
-			// The document probably doesn't exist.
-			console.error("Error updating document: ", error);
-	});
+			.then(() => {
+				console.log("Document successfully updated!");
+				button.innerHTML = 'Editar';
+				button.onclick = editPost;
+			})
+			.catch((error) => {
+				// The document probably doesn't exist.
+				console.error("Error updating document: ", error);
+			});
 	}
 }

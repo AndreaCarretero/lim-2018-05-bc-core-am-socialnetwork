@@ -78,3 +78,10 @@ const editPost = (id, post) => {
 			});
 	}
 }
+logout = () => {
+	firebase.auth().signOut()
+		.then(() => {
+			window.location.assign("login.html");
+		})
+		.cath();
+}

@@ -20,7 +20,6 @@ const savePost = () => {//esta funcion es la que guarda el ID, EMAIL Y STRING(po
 		});
 	event.preventDefault();
 }
-
 //leer documentos
 const readPost = () => {
 	speech();
@@ -78,10 +77,13 @@ const editPost = (id, post) => {
 			});
 	}
 }
-logout = () => {
+const logout = () => {
 	firebase.auth().signOut()
 		.then(() => {
 			window.location.assign("login.html");
 		})
 		.cath();
+}
+const likes = () => {
+	
 }

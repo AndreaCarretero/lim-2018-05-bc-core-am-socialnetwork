@@ -7,6 +7,7 @@ Instagram, Snapchat, Twitter, Facebook, Twitch, Linkedin, etc. Las redes sociale
 
 #### Introducción:
 Priscilla Ruíz,protagonista de exploraciones a la Antártida,emprendedora de su propia fundación "ReciclandoVerde" nos contactó para  crear una red social. No nos brinda información específica de lo que quiere mostrar o el público objetivo.Menciona  ciertos temas en los que le gustaría invertir pero  nos enfatiz la ideología que tenemos en común: la voluntad de compartir nuestras experiencias mientras viajamos de aquí para allá.Ella confía en nosotras,quiere que hagamos de este proyecto,lo mejor que podamos  y que luego la convenzamos de lanzar la red social al mercado.
+![priscillaruiz](https://user-images.githubusercontent.com/30779762/44076757-f5d7045c-9f66-11e8-9261-1d69d16093ab.png)
 
 
 ## Nuestra historia comienza así:

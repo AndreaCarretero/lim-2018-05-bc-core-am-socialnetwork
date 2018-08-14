@@ -9,18 +9,17 @@ const savePost = () => {//esta funcion es la que guarda el ID, EMAIL Y STRING(po
 	db.collection("POST`s").add({
 		id: idUserInLine,
 		email: emailUserInLine,
-		post: textarea2.value
+		post: textarea2.value,
+		like: 0,
 	})
 		.then((docRef) => {
 			// console.log("Document written with ID: ", docRef.id);
-
 		})
 		.catch((error) => {
 			console.error("Error adding document: ", error);
 		});
 	event.preventDefault();
 }
-
 //leer documentos
 const readPost = () => {
 	speech();
@@ -32,11 +31,12 @@ const readPost = () => {
 				`
 			<br>
 			<br><div class="z-depth-3 input-field col s10">
-			<textarea disabled id="elPost" cols="30" rows="10">${doc.data().post}</textarea>
+			<textarea class="materialize-textarea textarea-custom-padding" disabled id="elPost-${doc.id}" cols="30" rows="10">${doc.data().post}</textarea>
       </div>
       <br>
-			<button class="waves-effect btn red darken-2" onclick = "deletePost('${doc.id}')">Eliminar</button>
-			<button class="btn orange" id="buttonAdd"  onclick="editPost('${doc.id}', '${doc.data().post}')" >Editar</button>
+			<button class="waves-effect btn red darken-2 buttons" onclick = "deletePost('${doc.id}')">Eliminar</button>
+			<button class="btn blue rigth buttons" id = "like-${doc.id}" onclick = "likePost('${doc.id}')" >Like</button>
+			<button class="btn orange buttons" id="buttonAdd-${doc.id}"  onclick="editPost('${doc.id}', '${doc.data().post}')" >Editar</button>
 			`
 		});
 	});
@@ -55,15 +55,14 @@ const deletePost = (id) => {
 }
 
 const editPost = (id, post) => {
-	const cuadroPost = document.getElementById('elPost');
+	const cuadroPost = document.getElementById(`elPost-${id}`);
 	cuadroPost.disabled = false;
-	document.getElementById('elPost').value = post;
-	const button = document.getElementById('buttonAdd');
-
+	document.getElementById(`elPost-${id}`).value = post;
+	const button = document.getElementById(`buttonAdd-${id}`);
 	button.innerHTML = 'Guardar';
 	button.onclick = () => {
-		var washingtonRef = db.collection("POST`s").doc(id);
-		const post = document.getElementById('elPost').value;
+		const washingtonRef = db.collection("POST`s").doc(id);
+		const post = document.getElementById(`elPost-${id}`).value;
 		return washingtonRef.update({
 			post
 		})
@@ -78,10 +77,20 @@ const editPost = (id, post) => {
 			});
 	}
 }
-logout = () => {
+
+const likePost = (id) => {
+	const contador = `like-${id}`;
+	console.log(contador);
+}
+
+
+const logout = () => {
 	firebase.auth().signOut()
 		.then(() => {
 			window.location.assign("login.html");
 		})
 		.cath();
 }
+
+
+

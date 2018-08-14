@@ -10,3 +10,6 @@ body {
 .hidden{
   display:none;
 }
+.buttons{
+  margin: 2%;
+}

@@ -1,8 +1,4 @@
-window.onload = () => {
-  firebase.auth().onAuthStateChanged((user) => {
-      if (user) {
-        localStorage.setItem('ID', user.uid );
-        localStorage.setItem('emaill', user.email);
+
 
       //Si está registrado,entonces iniciará sesión
       loginUser.style.display = "none";

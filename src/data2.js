@@ -1,3 +1,6 @@
+
+
+
 const db = firebase.firestore();
 const speech = () => {// esta funcion es el codigo que sale en el error grandote
 	firestore = firebase.firestore();
@@ -9,11 +12,11 @@ const savePost = () => {//esta funcion es la que guarda el ID, EMAIL Y STRING(po
 	db.collection("POST`s").add({
 		id: idUserInLine,
 		email: emailUserInLine,
-		post: textarea2.value
+		post: textarea2.value,
+    likes: 0
 	})
 		.then((docRef) => {
 			// console.log("Document written with ID: ", docRef.id);
-
 		})
 		.catch((error) => {
 			console.error("Error adding document: ", error);
@@ -31,18 +34,21 @@ const readPost = () => {
 			boxPosteado.innerHTML +=
 				`
 			<br>
+			<p> ${doc.data().email} </p>
 			<br><div class="z-depth-3 input-field col s10">
 			<textarea disabled id="elPost" cols="30" rows="10">${doc.data().post}</textarea>
       </div>
       <br>
-			<button class="waves-effect btn red darken-2" onclick = "deletePost('${doc.id}')">Eliminar</button>
+			<button class="waves-effect btn red " onclick = "deletePost('${doc.id}')">Eliminar</button>
 			<button class="btn orange" id="buttonAdd"  onclick="editPost('${doc.id}', '${doc.data().post}')" >Editar</button>
+			<p > ${doc.data().likes} </p> 
+			<button id=${doc.data().id}>Me gusta </button>
 			`
 		});
-	});
+	/* 	const buttonLikes= getElementById(${doc.data().id}) */
+	});	
 }
 readPost();
-
 const deletePost = (id) => {
 	const result = confirm("¿Estas segurx que deseas eliminar el post?");
 	if (result == true) {
@@ -53,7 +59,6 @@ const deletePost = (id) => {
 		});
 	}
 }
-
 const editPost = (id, post) => {
 	const cuadroPost = document.getElementById('elPost');
 	cuadroPost.disabled = false;
@@ -62,26 +67,26 @@ const editPost = (id, post) => {
 
 	button.innerHTML = 'Guardar';
 	button.onclick = () => {
-		var washingtonRef = db.collection("POST`s").doc(id);
+		var washingtonRef = db.collection('POST`s').doc(id);
 		const post = document.getElementById('elPost').value;
 		return washingtonRef.update({
 			post
 		})
 			.then(() => {
-				console.log("Document successfully updated!");
+				console.log('Document successfully updated!');
 				button.innerHTML = 'Editar';
 				button.onclick = editPost;
 			})
 			.catch((error) => {
 				// The document probably doesn't exist.
-				console.error("Error updating document: ", error);
+				console.error('Error updating document: ', error);
 			});
 	}
 }
 logout = () => {
 	firebase.auth().signOut()
 		.then(() => {
-			window.location.assign("login.html");
+			window.location.assign('login.html');
 		})
 		.cath();
 }

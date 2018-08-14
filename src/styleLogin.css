@@ -16,12 +16,12 @@ video{
 }
 
 #emailLogin{
-  background-color: rgba(245, 241, 241, 0.719);
+  background-color: rgba(223, 181, 65, 0.568);
   border:  0.05em solid #A8A8A8;
   border-radius: 1em;
 }
 #passwordLogin{
-  background-color: rgba(245, 241, 241, 0.719);
+  background-color: rgba(223, 181, 65, 0.568);
   border: 0.05em solid #A8A8A8;
   border-radius: 1em;
 }
@@ -34,9 +34,6 @@ video{
 h5{
   color:black
 }
-slider{
-  background-size: 0.1em;
-}
 a{
   color:black;
 }
@@ -44,27 +41,27 @@ h6{
   color:black;
 }
 #nameR{
-  background-color: rgba(245, 241, 241, 0.719);
+  background-color: rgba(223, 181, 65, 0.568);
   border:  0.05em solid #A8A8A8;
   border-radius: 1em;
 }
 #emailR{
-  background-color: rgba(245, 241, 241, 0.719);
+  background-color: rgba(223, 181, 65, 0.568);
   border:  0.05em solid #A8A8A8;
   border-radius: 1em; 
 }
 #passwordR{
-  background-color: rgba(245, 241, 241, 0.719);
+  background-color: rgba(223, 181, 65, 0.568);
   border: 0.05em solid #A8A8A8;
   border-radius: 1em;
 }
 h5{
-  text-emphasis-color: white;
+  font-size: 144%;
 }
 #cuadro, #cuadro2 {
-  background-color: rgb(250, 250, 250, 0.83);
+  background-color: rgba(250, 250, 250, 0.493);
   border-radius: 10px;
-  padding: 5%;
+  padding: 1.8%;
 }
 
 

@@ -26,7 +26,7 @@ const readPost = () => {
 	db.collection("POST`s").onSnapshot((querySnapshot) => {
 		boxPosteado.innerHTML = "";
 		querySnapshot.forEach((doc) => {
-			console.log(`${doc.id} => ${doc.data().post}`);
+			console.log(`${doc.id} => ${doc.data().post} => ${doc.data().like}`);
 			boxPosteado.innerHTML +=
 				`
 			<br>
@@ -36,7 +36,7 @@ const readPost = () => {
       </div>
       <br>
 			<button class="waves-effect btn red darken-2 buttons" onclick = "deletePost('${doc.id}')">Eliminar</button>
-			<button class="btn blue rigth buttons" id = "like-${doc.id}" onclick = "likePost('${doc.id}')" >Like</button>
+			<button class="btn blue rigth buttons" id = "like-${doc.id}" onclick = "likePost('${doc.id}','${doc.data().like}')" >${doc.data().like} Like</button>
 			<button class="btn orange buttons" id="buttonAdd-${doc.id}"  onclick="editPost('${doc.id}', '${doc.data().post}')" >Editar</button>
 			`
 		});
@@ -77,9 +77,22 @@ const editPost = (id, post) => {
 			});
 	}
 }
-const likePost = (id) => {
-	const contador = `like-${id}`;
-	console.log(contador);
+
+const likePost = (id,cantActual) => {
+	cantActual ++;
+	const washingtonRef = db.collection("POST`s").doc(id);
+	document.getElementById(`like-${id}`).value = cantActual;
+			return washingtonRef.update({
+			like:cantActual
+		})
+			.then(() => {
+				console.log("Document successfully updated!");
+			})
+			.catch((error) => {
+				// The document probably doesn't exist.
+				console.error("Error updating document: ", error);
+			});
+
 }
 const logout = () => {
 	firebase.auth().signOut()

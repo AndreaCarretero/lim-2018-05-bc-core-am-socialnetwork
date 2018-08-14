@@ -21,7 +21,8 @@ window.onload = () => {
     loginUser.style.display = "none";
     registerUser.style.display = "block";
   }
- }
+}
+
  window.back = () => {
   loginUser.style.display = "block";
   registerUser.style.display = "none";

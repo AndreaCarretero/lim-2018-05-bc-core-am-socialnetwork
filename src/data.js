@@ -15,7 +15,7 @@ window.login = () => {
           alert("Aun no estas registradx ¿Qué esperas comienza a registrarte y veras todos los beneficios; o quizas tu contraseña no es correcta 😨");
         })
     }
-  } else if ((emailValue || passwordValue) == "") {
+  } else if ((emailValue || passwordValue) == "") { 
     alert("Ingrese e-mail y contraseña válida")
   }
   else if (emailValue == '') {
@@ -40,15 +40,21 @@ window.register = () => {
           console.log("User >"+ JSON.stringify(user));
         })
         .catch((error) => {
+          alert('Ingresa una cotraseña mayor a 6 caracteres');
           console.log("error de firebase >" + error.code);
           console.log("errorfirebase,mensaje >" + error.message);
         });
     }
-  } else {
+  }/*  else if{
     alert("Ingrese todos los campos con información válida")
-  }
+  } */
+  else if (emailRegister == '') {
+    alert("Porfavor,ingrese e-mail")
   // almacenar();
+}else if (nameRegister == '') {
+  alert("Porfavor,ingresa tu nombre")
 }
+};
 loginFacebook = () => {
   const provider = new firebase.auth.FacebookAuthProvider();
   provider.setCustomParameters({

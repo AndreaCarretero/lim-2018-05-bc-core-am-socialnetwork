@@ -10,11 +10,7 @@ video{
 }
 .section{
   background-color: white;
-<<<<<<< HEAD
   padding-left: 10.5%;
-=======
-  padding-left: 11.2%;
->>>>>>> cd44efd827b3bf477231798d378f8fac0ea66d03
 }
 #emailLogin, #passwordLogin{
   background-color: rgba(6, 39, 24, 0.568);

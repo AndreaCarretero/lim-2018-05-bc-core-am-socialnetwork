@@ -1,6 +1,6 @@
 const db = firebase.firestore();
 const speech = () => {// esta funcion es el codigo que sale en el error grandote
-	firestore = firebase.firestore();
+	let firestore = firebase.firestore();
 	const settings = { timestampsInSnapshots: true };
 	firestore.settings(settings);
 }
@@ -11,6 +11,7 @@ const savePost = () => {//esta funcion es la que guarda el ID, EMAIL Y STRING(po
 		email: emailUserInLine,
 		post: textarea2.value,
 		like: 0,
+		privacity: privacity.value
 	})
 		.then((docRef) => {
 			// console.log("Document written with ID: ", docRef.id);
@@ -21,28 +22,29 @@ const savePost = () => {//esta funcion es la que guarda el ID, EMAIL Y STRING(po
 	event.preventDefault();
 }
 //leer documentos
+
 const readPost = () => {
 	speech();
 	db.collection("POST`s").onSnapshot((querySnapshot) => {
 		boxPosteado.innerHTML = "";
 		querySnapshot.forEach((doc) => {
-			console.log(`${doc.id} => ${doc.data().post} => ${doc.data().like}`);
+			// console.log(`${doc.id} => ${doc.data().post} => ${doc.data().like}`);
 			boxPosteado.innerHTML +=
-        ` 
-      <br>
-      <br>
-      <br>
-      <p> ${doc.data().email} </p>
-      <p>Nos comparte que:</p>
-			<div class="z-depth-3 input-field col s10">
+				`
+			<div class = "boxOfPost">
+			<br>
+			<br><div class="z-depth-3 input-field col s10">
+			<p> ${doc.data().email} </p>
 			<textarea class="materialize-textarea textarea-custom-padding" disabled id="elPost-${doc.id}" cols="30" rows="10">${doc.data().post}</textarea>
       </div>
       <br>
 			<button class="waves-effect btn red darken-2 buttons" onclick = "deletePost('${doc.id}')">Eliminar</button>
 			<button class="btn blue rigth buttons" id = "like-${doc.id}" onclick = "likePost('${doc.id}','${doc.data().like}')" >${doc.data().like} Like</button>
 			<button class="btn orange buttons" id="buttonAdd-${doc.id}"  onclick="editPost('${doc.id}', '${doc.data().post}')" >Editar</button>
+			<div>
 			`
 		});
+	/* 	const buttonLikes= getElementById(${doc.data().id}) */
 	});
 }
 readPost();
@@ -71,7 +73,7 @@ const editPost = (id, post) => {
 			post
 		})
 			.then(() => {
-				console.log("Document successfully updated!");
+				// console.log("Document successfully updated!");
 				button.innerHTML = 'Editar';
 				button.onclick = editPost;
 			})
@@ -81,20 +83,21 @@ const editPost = (id, post) => {
 			});
 	}
 }
-const likePost = (id,cantActual) => {
-	cantActual ++;
+const likePost = (id, cantActual) => {
+	cantActual++;
 	const washingtonRef = db.collection("POST`s").doc(id);
 	document.getElementById(`like-${id}`).value = cantActual;
-			return washingtonRef.update({
-			like:cantActual
+	return washingtonRef.update({
+		like: cantActual
+	})
+		.then(() => {
+			console.log("Document successfully updated!");
+			readPost()
 		})
-			.then(() => {
-				console.log("Document successfully updated!");
-			})
-			.catch((error) => {
-				// The document probably doesn't exist.
-				console.error("Error updating document: ", error);
-			});
+		.catch((error) => {
+			// The document probably doesn't exist.
+			console.error("Error updating document: ", error);
+		});
 }
 const logout = () => {
 	firebase.auth().signOut()
@@ -104,64 +107,3 @@ const logout = () => {
 		.cath();
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-const getUser = () => {
-  return firebase.auth().currentUser;
-}
-
-// const getPrivate = () => {
-
-//   let isLogged = (user != null);
-//   let isUserPost = isLogged ? readPost() : false;
-//   if (isUserPost) {
-//     speech();
-//     db.collection("POST`s").onSnapshot((querySnapshot) => {
-//       querySnapshot.forEach((doc) => {
-//         if (`${doc.data().email}` == user.email) {
-//           console.log(`${doc.id} => ${doc.data().post}`);
-//           boxPosteado.innerHTML +=
-//             `
-// 					<br>
-// 					<p> ${doc.data().email} </p>
-// 					<br><div class="z-depth-3 input-field col s10">
-// 					<textarea class="materialize-textarea textarea-custom-padding" disabled id="elPost-${doc.id}" cols="30" rows="10">${doc.data().post}</textarea>
-// 					</div>
-// 					<br>
-// 					<button class="waves-effect btn red darken-2 buttons" onclick = "deletePost('${doc.id}')">Eliminar</button>
-// 					<button class="btn blue rigth buttons" id = "like-${doc.id}" onclick = "likePost('${doc.id}')" >Like</button>
-// 					<button class="btn orange buttons" id="buttonAdd-${doc.id}"  onclick="editPost('${doc.id}', '${doc.data().post}')" >Editar</button>
-// 					`
-//         };
-//       })
-//     })
-//   } else {
-//     speech();
-//     db.collection("POST`s").onSnapshot((querySnapshot) => {
-//       querySnapshot.forEach((doc) => {
-//         if (`${doc.data().email}` == user.email) {
-//           console.log(`${doc.id} => ${doc.data().post}`);
-//           boxPosteado.innerHTML +=
-//             `
-// 					<br>
-// 					<p> ${doc.data().email} </p>
-// 					<br><div class="z-depth-3 input-field col s10">
-// 					<textarea class="materialize-textarea textarea-custom-padding" disabled id="elPost-${doc.id}" cols="30" rows="10">${doc.data().post}</textarea>
-// 					</div>
-// 					`
-//         };
-//       })
-//     })
-//   }
-// }
-// getPrivate();

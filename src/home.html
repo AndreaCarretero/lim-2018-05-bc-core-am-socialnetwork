@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,6 +28,7 @@
   </script>
 </head>
 <!--SE TRABAJARÁ CON 2 HTML LOGIN Y REGISTER SIN BOTÓN "CERRAR SESIÓN" -->
+
 <body>
   <!--Navbar para la parte superior :Logo en vista diferente ,perfil y cerrar sesión-->
   <nav class="green ">
@@ -50,7 +52,9 @@
         <li>
           <a href="home.html">-</a>
         </li>
-        <button id="logOutButton" class="btn red waves-effect col s " onclick="logout()"> Cerrar Sesión</button>
+        <li>
+          <button id="logOutButton" class="btn red waves-effect col s " onclick="logout()"> Cerrar Sesión</button>
+        </li>
       </ul>
     </div>
     <!--Aquí finaliza nav para desktop-->
@@ -103,25 +107,30 @@
           <button class="btn green  right" id="publicarPost" onclick="pintar()"> Publicar</button>
           <div class="col 3">
             <select disable="disable" id="privacity">
-              <option value="ds" class="value">Privacidad</option>
-              <option value="sds" class="value">Todos</option>
-              <option value="sds" class="value">Solo yo</option>
+              <option value="Todos">Todos</option>
+              <option value="SoloYo">Solo yo</option>
             </select>
           </div>
         </div>
-     </div>
-     <!--Aquí se encuentra el espacio para los post publicados,editar el post  !-->
-    <div class="row" id = "boxPosteado">
     </div>
-    
+
+    <div>
+      <select class="selectViewPost" disable="disable" id="verPost">
+        <option>Selecciona los post que deseas ver</option>
+        <option value="public">Ver post publicos</option>
+        <option value="private">Ver post privados</option>
+      </select>
+    </div>
+    <!--Aquí se encuentra el espacio para los post publicados,editar el post  !-->
+    <div class="row" id="boxPosteado">
+    </div>
+
     <br>
-    
+
     <!--Aquí finaliza el input de postear  !-->
-    <div class="footer">
-        <div class="center align">
-          © 2018 Copyright Alida Contreras- Andrea Carretero
-        </div>
-      </div>
+    <div class="footer center align">
+      © 2018 Copyright Alida Contreras- Andrea Carretero
+    </div>
   </section>
   <!--Aquí termina visualiza el input de postear - todos los elementos requeridos para el muro -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -140,6 +149,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
   <script src="data2.js"></script>
   <script src="main2.js"></script>
-</body>
-</html>
 
+
+</body>
+
+</html>

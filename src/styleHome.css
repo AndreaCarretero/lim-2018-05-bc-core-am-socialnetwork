@@ -4,12 +4,27 @@ select{
 body {
   height: 100%;
   font-family: 'Modern Antiqua', cursive;
-  font-family: 'Eczar', serif;
   font-size: 120%;
+}
+img{
+  border-radius: 20px
+}
+.selectViewPost{
+  width: 45%;
 }
 .hidden{
   display:none;
 }
 .buttons{
-  margin: 2%;
+  margin: 4%;
+  font-family: 'Modern Antiqua', cursive;
+}
+.boxOfPost{
+  padding-left: 10.5%;
+}
+#publicarPost{
+  font-family: 'Modern Antiqua', cursive;
+}
+#logOutButton{
+  font-family: 'Modern Antiqua', cursive;
 }

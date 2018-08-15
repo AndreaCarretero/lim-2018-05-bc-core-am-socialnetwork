@@ -25,7 +25,8 @@ const pintar = () => {//el value del post ya se guarda, pero no consolea
 					boxPosteado.innerHTML +=
 						`
 						<br>
-						<br><div class="z-depth-3 input-field col s10">
+            <br><div class="z-depth-3 input-field col s10">
+            <p> ${doc.data().email} </p>
 						<textarea class="materialize-textarea textarea-custom-padding" disabled id="elPost-${doc.id}" cols="30" rows="10">${doc.data().post}</textarea>
 						</div>
 						<br>
@@ -39,7 +40,8 @@ const pintar = () => {//el value del post ya se guarda, pero no consolea
 						boxPosteado.innerHTML +=
 						`
 						<br>
-						<br><div class="z-depth-3 input-field col s10">
+            <br><div class="z-depth-3 input-field col s10">
+            <p> ${doc.data().email} </p>
 						<textarea class="materialize-textarea textarea-custom-padding" disabled id="elPost-${doc.id}" cols="30" rows="10">${doc.data().post}</textarea>
 						</div>
 						<br>

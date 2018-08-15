@@ -32,7 +32,6 @@ const readPost = () => {
 			boxPosteado.innerHTML +=
 				`
 			<br>
-			<p> ${doc.data().email} </p>
 			<br><div class="z-depth-3 input-field col s10">
 			<p> ${doc.data().email} </p>
 			<textarea class="materialize-textarea textarea-custom-padding" disabled id="elPost-${doc.id}" cols="30" rows="10">${doc.data().post}</textarea>
@@ -47,6 +46,7 @@ const readPost = () => {
 	});
 }
 readPost();
+
 const deletePost = (id) => {
 	const result = confirm("¿Estas segurx que deseas eliminar el post?");
 	if (result == true) {
@@ -57,6 +57,7 @@ const deletePost = (id) => {
 		});
 	}
 }
+
 const editPost = (id, post) => {
 	const cuadroPost = document.getElementById(`elPost-${id}`);
 	cuadroPost.disabled = false;
@@ -76,7 +77,7 @@ const editPost = (id, post) => {
 			})
 			.catch((error) => {
 				// The document probably doesn't exist.
-				console.error('Error updating document: ', error);
+				console.error("Error updating document: ", error);
 			});
 	}
 }
@@ -99,7 +100,7 @@ const likePost = (id, cantActual) => {
 const logout = () => {
 	firebase.auth().signOut()
 		.then(() => {
-			window.location.assign('login.html');
+			window.location.assign("login.html");
 		})
 		.cath();
 }

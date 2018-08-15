@@ -1,4 +1,8 @@
-function suma(a, b) {
-  return a + b;
+const validateLogin = (mail) => {
+  const filter = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+  return filter.test(mail);
 }
-module.exports = suma;
+
+module.export = {
+  validateLogin
+}

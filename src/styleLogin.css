@@ -1,6 +1,5 @@
 body{
-  font-family: 'Modern Antiqua', cursive;
-  font-family: 'Eczar', serif;
+ font-family: 'Eczar', serif;
   color: rgb(255, 255, 255);
   margin: 0;
 }
@@ -11,16 +10,11 @@ video{
 }
 .section{
   background-color: white;
-  padding-left: 8.2%;
+  padding-left: 10.5%;
 }
-#emailLogin{
-  background-color: rgba(223, 181, 65, 0.568);
+#emailLogin, #passwordLogin{
+  background-color: rgba(6, 39, 24, 0.568);
   border:  0.05em solid #A8A8A8;
-  border-radius: 1em;
-}
-#passwordLogin{
-  background-color: rgba(223, 181, 65, 0.568);
-  border: 0.05em solid #A8A8A8;
   border-radius: 1em;
 }
 .btn{
@@ -29,36 +23,20 @@ video{
 .btn-flat-small grey{
   border-radius: 2em;
 }
-h5{
+h5, a, h6{
   color:black
-}
-a{
-  color:black;
-}
-h6{
-  color:black;
-}
-#nameR{
-  background-color: rgba(223, 181, 65, 0.568);
-  border:  0.05em solid #A8A8A8;
-  border-radius: 1em;
-}
-#emailR{
-  background-color: rgba(223, 181, 65, 0.568);
-  border:  0.05em solid #A8A8A8;
-  border-radius: 1em; 
-}
-#passwordR{
-  background-color: rgba(223, 181, 65, 0.568);
-  border: 0.05em solid #A8A8A8;
-  border-radius: 1em;
+  
 }
 h5{
   font-size: 144%;
 }
-#cuadro, #cuadro2 {
+#cuadro {
   background-color: rgba(250, 250, 250, 0.493);
   border-radius: 10px;
+  padding: 1.8%;
+}
+#cuadro2{
+  background-color: rgba(250, 250, 250, 0.01);
   padding: 1.8%;
 }
 

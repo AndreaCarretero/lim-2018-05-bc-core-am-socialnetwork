@@ -31,6 +31,7 @@ const readPost = () => {
 			// console.log(`${doc.id} => ${doc.data().post} => ${doc.data().like}`);
 			boxPosteado.innerHTML +=
 				`
+			<div class = "boxOfPost">
 			<br>
 			<br><div class="z-depth-3 input-field col s10">
 			<p> ${doc.data().email} </p>
@@ -40,6 +41,7 @@ const readPost = () => {
 			<button class="waves-effect btn red darken-2 buttons" onclick = "deletePost('${doc.id}')">Eliminar</button>
 			<button class="btn blue rigth buttons" id = "like-${doc.id}" onclick = "likePost('${doc.id}','${doc.data().like}')" >${doc.data().like} Like</button>
 			<button class="btn orange buttons" id="buttonAdd-${doc.id}"  onclick="editPost('${doc.id}', '${doc.data().post}')" >Editar</button>
+			<div>
 			`
 		});
 	/* 	const buttonLikes= getElementById(${doc.data().id}) */

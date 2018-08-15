@@ -3,8 +3,8 @@ window.login = () => {
   const emailValue = document.getElementById('emailLogin').value;
   const passwordValue = document.getElementById('passwordLogin').value;
   if (emailValue && passwordValue !== "") {
-    const filtro = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
-    if (!filtro.test(emailValue)) {
+    const filterValidation = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+    if (!filterValidation.test(emailValue)) {
       alert("Por favor, digite un e-mail valido")
     } else {
       firebase.auth().signInWithEmailAndPassword(emailValue, passwordValue)
@@ -30,8 +30,8 @@ window.register = () => {
   const emailRegister = emailR.value;
   const passwordRegister = passwordR.value;
   if (nameRegister && emailRegister && passwordRegister !== "") {
-    const filtro = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
-    if (!filtro.test(emailRegister)) {
+    const filterValidation = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+    if (!filterValidation.test(emailRegister)) {
       alert("Ingrese un e-mail y contraseña válidx")
     } else {
       firebase.auth().createUserWithEmailAndPassword(emailRegister, passwordRegister)

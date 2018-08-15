@@ -1,15 +1,43 @@
 {
-  "name": "jest-testing",
+  "name": "lim-2018-05-bc-core-am-socialnetwork",
   "version": "1.0.0",
-  "scripts": {
-    "test": "jest"
+  "description": "Instagram, Snapchat, Twitter, Facebook, Twitch, Linkedin, etc. Las redes sociales han invadido nuestras vidas. Las amamos u odiamos, y muchxs no podemos vivir sin ellas. Hay redes sociales de todo tipo y para todo tipo de intereses. Por ejemplo, en una ronda de financiamiento con inversionistas, se presentó una red social para químicos en la que los usuarios podían publicar artículos sobre sus investigaciones, comentar en los artículos de sus colegas, y filtrar artículos de acuerdo a determinadas etiquetas o su popularidad, lo más reciente, o lo más comentado.",
+  "main": "headless.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "chai": "^4.1.2",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "firebase": "^5.3.0",
+    "firebase-functions-test": "^0.1.3",
+    "firebase-mock": "^2.2.4",
+    "htmlhint": "^0.9.13",
+    "mocha": "^5.1.1",
+    "nyc": "^11.9.0",
+    "opener": "^1.4.3"
   },
   "devDependencies": {
-    "babel-core": "^6.26.3",
-    "babel-jest": "^22.4.3",
-    "babel-preset-env": "^1.6.1",
-    "babel-preset-react": "^6.24.1",
-    "jest": "^22.4.4",
-    "regenerator-runtime": "^0.11.1"
-  }
+    "eslint-plugin-import": "^2.14.0",
+    "mocha": "^5.2.0"
+  },
+  "scripts": {
+    "htmlhint": "htmlhint src/*.html test/*.html",
+    "eslint": "eslint --ext .js test/",
+    "pretest": "npm run eslint && npm run htmlhint",
+    "test-browser": "opener ./test/index.html",
+    "test-node": "nyc mocha ./test/headless.js && nyc report --reporter=html",
+    "test": "npm run test-node && npm run test-browser"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AndreaCarretero/lim-2018-05-bc-core-am-socialnetwork.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AndreaCarretero/lim-2018-05-bc-core-am-socialnetwork/issues"
+  },
+  "homepage": "https://github.com/AndreaCarretero/lim-2018-05-bc-core-am-socialnetwork#readme"
 }

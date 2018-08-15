@@ -28,7 +28,7 @@ Este equipo piensa distinto, pensó distinto al momento de decidir cuál sería 
 
 ------------------------------------------------------
 
-### Para "levantar" este proyecto,comenzamos con un simple ,muy simple boceto de la primera vista de Urpi ,les dejamos una muestra, 1er prototipo de baja fidelidad:
+### Utilizando nuestro lápiz y papel,comenzamos con un simple ,muy simple boceto de la primera vista de Urpi ,les dejamos una muestra, 1er prototipo de baja fidelidad:
 
 ![1er prototipo de baja fidelidad](https://scontent-scl1-1.xx.fbcdn.net/v/t1.15752-9/37757577_1727014314018713_5106207526391644160_n.jpg?_nc_cat=0&oh=1ca6646668fca3839e0d029eeb01e8ac&oe=5BDA695B)
 
@@ -36,6 +36,17 @@ Este equipo piensa distinto, pensó distinto al momento de decidir cuál sería 
 
 ![2do prototipo de baja fidelidad](https://scontent-scl1-1.xx.fbcdn.net/v/t1.15752-9/37736710_1727006844019460_1583917852103016448_n.jpg?_nc_cat=0&oh=e4fe9a677e608da12d0e9e1001e39393&oe=5BD8C840)
 _Ayni_ : Bien común en quechua - quisimos probar por un día este nombre porque ya queríamos comenzar con el idioma quechua y Urpi aún no estaba listo junto con el logo.
+
+------------------------------------------------------
+## Red Social en camino: Urpi
+
+Muchos estarán preguntándose: ¿Qué significa Urpi? palabra en Quechua que tiene el significado de "paloma", pues decidimos darle una connotación simbólica a todos aquellos viajeros  que van y vienen con emoción de infinitos lugares, recolectando historias,sumando personas en su vida ,aquellos que aprenden "volando" de "viaje en viaje".
+ 
+Logo de Urpi:    ---> ![logocircle](https://user-images.githubusercontent.com/30779762/44099460-43a529d4-9fa8-11e8-9710-1100f2a29e0e.png)
+
+
+Esta es la red social enfocada en la educación a través del compartir experiencias, datos curiosos,"tips viajeros" de cualquier lugar del Perú, con la intención de fomentar el aprendizaje  mediante una plataforma diferente.Urpi es diferente,es libre.Urpi es para todos aquellos que van por el mundo aprendiendo ,conociendo nuevas culturas, compartiendo,los que tienen ese espíritu libre y deseo que otros también viajen con las últimas nuevas que estos ya conocen(primer usuario) y para los que se inspiran viendo historias con "info" actualizada de ese preciso lugar o alrededores(segundo usuario). Urpi recolecta todas las experiencias que muchos tienen por contar.
+(objetivos de usuarios en relación a nuestro producto).
 
 ### Ya inspirándonos más ,realizamos el primer prototipo de alta fidelidad .Quedó así:
 ![segundoprototipofigma](https://user-images.githubusercontent.com/30779762/44103421-ceef0754-9fb1-11e8-9edf-067d91b29954.png)
@@ -54,19 +65,12 @@ Y ahora con ustedes, presentamos la versión oficial del _figma_:
 
 ![oficialfigma](https://user-images.githubusercontent.com/30779762/44103651-6381db1c-9fb2-11e8-9824-78eeab4d2e51.png)
 
+ Nuestras conclusiones fueron claras,después de toda esta jornada de _entrevistar -probar-cambiar-entrevistar-testar_ ,sabiendo que la imagen era solo un prototipo con los botones y su sombra detrás ,tuvimos la aprobación del público en general.
+
+
 Link :
 https://www.figma.com/proto/XEESZc0hxzCN8wKqISQTTXbj/Untitled?node-id=26%3A1&scaling=scale-down
 
-------------------------------------------------------
-## Red Social en camino: Urpi
-
-Muchos estarán preguntándose: ¿Qué significa Urpi? palabra en Quechua que tiene el significado de "paloma", pues decidimos darle una connotación simbólica a todos aquellos viajeros  que van y vienen con emoción de infinitos lugares, recolectando historias,sumando personas en su vida ,aquellos que aprenden "volando" de "viaje en viaje".
- 
- Luego de algunas horas logramos crear a   ---> ![logocircle](https://user-images.githubusercontent.com/30779762/44099460-43a529d4-9fa8-11e8-9710-1100f2a29e0e.png)
-
-
-Esta es la red social enfocada en la educación a través del compartir experiencias, datos curiosos,"tips viajeros" de cualquier lugar del Perú, con la intención de fomentar el aprendizaje  mediante una plataforma diferente.Urpi es diferente,es libre.Urpi es para todos aquellos que van por el mundo aprendiendo ,conociendo nuevas culturas, compartiendo,los que tienen ese espíritu libre y deseo que otros también viajen con las últimas nuevas que estos ya conocen(primer usuario) y para los que se inspiran viendo historias con "info" actualizada de ese preciso lugar o alrededores(segundo usuario). Urpi recolecta todas las experiencias que muchos tienen por contar.
-(objetivos de usuarios en relación a nuestro producto).
 
 Elección de colores:
 -
@@ -157,27 +161,32 @@ versión _mobile_ :
 ![mobile](https://user-images.githubusercontent.com/30779762/44111173-53a96344-9fc7-11e8-8643-8be31dd1ba11.png)
 
 
-Una vez más volvimos a pedir _feedback_ y se continuó hablando del contraste en versión para computadoras.
+Una vez más volvimos a pedir _feedback_ y se continuó hablando del contraste en versión para computadoras.Concluimos el _testing_ con el producto en _html_  con mucho por pulir y mejorar, sobre todo en lo visual, entendían el enfoque pero querían tener bastante "pulcro" el área del _login_ y _registro_
 
 ------------------------------------------------------
 
-## Luego de toda esta ardua travesía :
+
 ### ¿Cómo llegaste a la definición final de tu producto?
 
-Recordar que :
+Luego de toda esta **ardua travesía** ,luego de entrevistar,volver a _testear_ , repreguntar a nuestros usuarios, consultar a turistas en Barranco y Miraflores ,llegamos a la conclusión de hacer Urpi lo más interactivo que podamos .Desde la primera vista así que en un primer momento pensamos en colocar un _carrusel de imágenes_ pero no había una jerarquía visual así que implementamos un video y no un video aleatorio;que mejor opción o atención que mostrar a **nuestro Perú en un minuto**
 
- "Algunos objetivos específicos:
--Entender las necesidades de los usuarios para los que crearás el producto y que ayudarás a resolver.
--Poner en juego tu creatividad para generar ideas que lleven a una solución original y valiosa del problema."
+![vista1](https://user-images.githubusercontent.com/30779762/44121427-8fba33ae-9fe5-11e8-997e-1aff29c6ebc5.png)
+![vista2](https://user-images.githubusercontent.com/30779762/44121428-915e3e80-9fe5-11e8-9c6b-ca57cde0dff2.png)
+![vista3](https://user-images.githubusercontent.com/30779762/44121524-029df180-9fe6-11e8-97d4-09cbc8207594.png)
+
+------------------------------------------------------
+
+### ¿Cuáles son las principales funcionalidades del producto y cuál es su prioridad?
+
+ Según nuestro estudio **casi** todos cuentan con un perfil en Fb así que Urpi tiene la opción de conectarse con su propia cuenta Facebook junto con su Gmail.
+ Los viajeros cuentan con un espacio libre para colocar su historia como mejor la quieran contar siempre y cuando dando sentido al  mostrarle a los demás lo bello que es este país y los que se inspiran leyendo estas experiencias tienen total acceso a esta sección para así generar una cultura de educación en esta red social.
+
+### ¿Cómo verificaste que el producto les está resolviendo sus problemas?
+Los usuarios asemejan una idea general al  visualizar el slogan que se aprecia en la primera vista . Pudimos concluir que se genera la emoción al ver muchos lugares fuera de Lima,ellos al ver el video mientras se registraban lanzaban comentarios de querer darse unos días de vacaciones al interior del país ,sin darnos cuenta, estábamos creando una consciencia del valor que tienen los infinitos lugares que tiene el Perú.
+
+### ¿Cómo nos aseguramos que estos usuarios usen este producto?
+Nosotras creemos en la mejor arma de marketing; la publicidad de persona en persona .Somos capaces de recorrernos Lima entera para que cada un@ ,cada usuari@,viajer@,turista ,persona gozen de una comunidad amplía de noticias y datos curiosos de lo ya mencionado anteriormente,paisajes del Perú.
+
+ Para concluir , este proyecto fue todo un reto,gracias por proponerlo. Nos quedamos con toda esta _etapa de investigación_ junto con las _funcionalidades_ de caaada acción. Gracias por plantearlo.
 
 
-
-
-  * [ ] Cuáles son los objetivos de estos usuarios en relación con el producto.
-  * [ ] Cuáles son las principales funcionalidades del producto y cuál es su prioridad.
-  * [ ] Cómo verificaste que el producto les está resolviendo sus problemas.
-  * [ ] Cómo te asegurarás que estos usuarios usen este producto.
-* [ ] Benchmark de las principales redes sociales.
-* [ ] Resumen de entrevistas con usuarios.
-* [ ] Conclusiones de testing con el prototipo de alta fidelidad con usuarios.
-* [ ] Conclusiones de testing con el producto en HTML.

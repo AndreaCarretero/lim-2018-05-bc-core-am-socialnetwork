@@ -1,6 +1,6 @@
 const db = firebase.firestore();
 const speech = () => {// esta funcion es el codigo que sale en el error grandote
-	firestore = firebase.firestore();
+	let firestore = firebase.firestore();
 	const settings = { timestampsInSnapshots: true };
 	firestore.settings(settings);
 }
@@ -11,6 +11,7 @@ const savePost = () => {//esta funcion es la que guarda el ID, EMAIL Y STRING(po
 		email: emailUserInLine,
 		post: textarea2.value,
 		like: 0,
+		privacity: privacity.value
 	})
 		.then((docRef) => {
 			// console.log("Document written with ID: ", docRef.id);
@@ -21,16 +22,18 @@ const savePost = () => {//esta funcion es la que guarda el ID, EMAIL Y STRING(po
 	event.preventDefault();
 }
 //leer documentos
+
 const readPost = () => {
 	speech();
 	db.collection("POST`s").onSnapshot((querySnapshot) => {
 		boxPosteado.innerHTML = "";
 		querySnapshot.forEach((doc) => {
-			console.log(`${doc.id} => ${doc.data().post} => ${doc.data().like}`);
+			// console.log(`${doc.id} => ${doc.data().post} => ${doc.data().like}`);
 			boxPosteado.innerHTML +=
 				`
 			<br>
 			<br><div class="z-depth-3 input-field col s10">
+			<p> ${doc.data().email} </p>
 			<textarea class="materialize-textarea textarea-custom-padding" disabled id="elPost-${doc.id}" cols="30" rows="10">${doc.data().post}</textarea>
       </div>
       <br>
@@ -39,6 +42,7 @@ const readPost = () => {
 			<button class="btn orange buttons" id="buttonAdd-${doc.id}"  onclick="editPost('${doc.id}', '${doc.data().post}')" >Editar</button>
 			`
 		});
+	/* 	const buttonLikes= getElementById(${doc.data().id}) */
 	});
 }
 readPost();
@@ -67,7 +71,7 @@ const editPost = (id, post) => {
 			post
 		})
 			.then(() => {
-				console.log("Document successfully updated!");
+				// console.log("Document successfully updated!");
 				button.innerHTML = 'Editar';
 				button.onclick = editPost;
 			})
@@ -77,20 +81,21 @@ const editPost = (id, post) => {
 			});
 	}
 }
-const likePost = (id,cantActual) => {
-	cantActual ++;
+const likePost = (id, cantActual) => {
+	cantActual++;
 	const washingtonRef = db.collection("POST`s").doc(id);
 	document.getElementById(`like-${id}`).value = cantActual;
-			return washingtonRef.update({
-			like:cantActual
+	return washingtonRef.update({
+		like: cantActual
+	})
+		.then(() => {
+			console.log("Document successfully updated!");
+			readPost()
 		})
-			.then(() => {
-				console.log("Document successfully updated!");
-			})
-			.catch((error) => {
-				// The document probably doesn't exist.
-				console.error("Error updating document: ", error);
-			});
+		.catch((error) => {
+			// The document probably doesn't exist.
+			console.error("Error updating document: ", error);
+		});
 }
 const logout = () => {
 	firebase.auth().signOut()
@@ -99,6 +104,4 @@ const logout = () => {
 		})
 		.cath();
 }
-
-
 

@@ -1,16 +1,20 @@
 const idUserInLine = localStorage.getItem('ID');
 const emailUserInLine = localStorage.getItem('emaill');
-  console.log(idUserInLine);
-  console.log(emailUserInLine);
-const pintar = () => {//el value del post ya se guarda, pero no consolea
-  if (textarea2.value !== '') {
+console.log(idUserInLine);
+console.log(emailUserInLine);
+const pintar = () => { //el value del post ya se guarda, pero no consolea
+
+  const postContent = textarea2.value;
+  const trimPost = postContent.trim();
+
+  if (postContent !== '' && trimPost !== '') {
     savePost();
     textarea2.value = '';
-  }
-  else {
-    alert('Ingrese texto en espacio')
+  } else {
+    alert('Por favor ,ingrese texto.')
   }
   event.preventDefault();
+
 }
 
 	// db.collection("POST`s").onSnapshot((querySnapshot) => {
@@ -21,7 +25,7 @@ const pintar = () => {//el value del post ya se guarda, pero no consolea
 	// 	querySnapshot.forEach((doc) => {
 	// 		// boxPosteado.innerHTML = "";
 	// 			if (verPost.value === "public" && (`${doc.data().privacity}` == "Todos")) {
-  //         console.log(idUserInLine);          
+  //         console.log(idUserInLine);
 	// 				console.log(`${doc.id} => ${doc.data().post} => ${doc.data().like}`);
 	// 				boxPosteado.innerHTML +=
 	// 					`

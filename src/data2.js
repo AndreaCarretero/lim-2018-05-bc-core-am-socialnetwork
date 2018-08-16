@@ -6,34 +6,52 @@ const speech = () => {// esta funcion es el codigo que sale en el error grandote
 }
 const savePost = () => {//esta funcion es la que guarda el ID, EMAIL Y STRING(post) en fireStore
 	speech();
-	db.collection("POST`s").add({
-		id: idUserInLine,
-		email: emailUserInLine,
-		post: textarea2.value,
-		like: 0,
-		privacity: privacity.value
-	})
-		.then((docRef) => {
-			// console.log("Document written with ID: ", docRef.id);
+	if (privacity.value == "SoloYo") {
+		db.collection("PostsPrivados").add({
+			id: idUserInLine,
+			email: emailUserInLine,
+			post: textarea2.value,
+			like: 0,
+			privacity: privacity.value
 		})
-		.catch((error) => {
-			console.error("Error adding document: ", error);
-		});
+			.then((docRef) => {
+				// console.log("Document written with ID: ", docRef.id);
+			})
+			.catch((error) => {
+				console.error("Error adding document: ", error);
+			});
+		event.preventDefault();
+
+	}
+	else if (privacity.value == "Todos")
+		db.collection("PostsPublicos").add({
+			id: idUserInLine,
+			email: emailUserInLine,
+			post: textarea2.value,
+			like: 0,
+			privacity: privacity.value
+		})
+			.then((docRef) => {
+				// console.log("Document written with ID: ", docRef.id);
+			})
+			.catch((error) => {
+				console.error("Error adding document: ", error);
+			});
 	event.preventDefault();
 }
 //leer documentos
 
 const readPost = () => {
 	speech();
-	db.collection("POST`s").onSnapshot((querySnapshot) => {
+	db.collection("PostsPublicos").onSnapshot((querySnapshot) => {
 		boxPosteado.innerHTML = "";
 		querySnapshot.forEach((doc) => {
 			console.log(idUserInLine);
 			console.log(`${doc.id} => ${doc.data().post} => ${doc.data().like} =>${doc.data().id}`);
 
-			if ( `${doc.data().id}` != idUserInLine  && `${doc.data().privacity}` == "SoloYo") {
-					boxPosteado.innerHTML +=
-						`
+			if (idUserInLine != `${doc.data().id}` ) {
+				boxPosteado.innerHTML +=
+					`
 					<br>
 					<br><div class="z-depth-3 input-field col s10">
 					<p> ${doc.data().email} </p>
@@ -42,9 +60,9 @@ const readPost = () => {
 					<br>
 					<button class="btn blue rigth buttons" id = "like-${doc.id}" onclick = "likePost('${doc.id}','${doc.data().like}')" >${doc.data().like} Me gusta</button>
 					`
-				}
-			
-			else if (idUserInLine == `${doc.data().id}` && `${doc.data().privacity}` == "SoloYo") {
+			}
+
+			else if (idUserInLine == `${doc.data().id}`) {
 				console.log(`${doc.id} => ${doc.data().post} => ${doc.data().like}`);
 				boxPosteado.innerHTML +=
 					`
@@ -59,22 +77,7 @@ const readPost = () => {
 					<button class="btn orange buttons" id="buttonAdd-${doc.id}"  onclick="editPost('${doc.id}', '${doc.data().post}')" >Editar</button>
 					`
 			}
-			else if (idUserInLine == `${doc.data().id}` && `${doc.data().privacity}` == "Todos") {
-				console.log(`${doc.id} => ${doc.data().post} => ${doc.data().like}`);
-				boxPosteado.innerHTML +=
-					`
-					<br>
-					<br><div class="z-depth-3 input-field col s10">
-					<p> ${doc.data().email} </p>
-					<textarea class="materialize-textarea textarea-custom-padding" disabled id="elPost-${doc.id}" cols="30" rows="10">${doc.data().post}</textarea>
-					</div>
-					<br>
-					<button class="waves-effect btn red darken-2 buttons" onclick = "deletePost('${doc.id}')">Eliminar</button>
-					<button class="btn blue rigth buttons" id = "like-${doc.id}" onclick = "likePost('${doc.id}','${doc.data().like}')" >${doc.data().like} Me gusta</button>
-					<button class="btn orange buttons" id="buttonAdd-${doc.id}"  onclick="editPost('${doc.id}', '${doc.data().post}')" >Editar</button>
-					`
-			}
-		});
+					});
 		/* 	const buttonLikes= getElementById(${doc.data().id}) */
 	});
 }

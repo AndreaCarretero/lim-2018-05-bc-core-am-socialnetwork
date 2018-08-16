@@ -28,23 +28,54 @@ const readPost = () => {
 	db.collection("POST`s").onSnapshot((querySnapshot) => {
 		boxPosteado.innerHTML = "";
 		querySnapshot.forEach((doc) => {
-			// console.log(`${doc.id} => ${doc.data().post} => ${doc.data().like}`);
-			boxPosteado.innerHTML +=
-				`
-			<div class = "boxOfPost">
-			<br>
-			<br><div class="z-depth-3 input-field col s10">
-			<p> ${doc.data().email} </p>
-			<textarea class="materialize-textarea textarea-custom-padding" disabled id="elPost-${doc.id}" cols="30" rows="10">${doc.data().post}</textarea>
-      </div>
-      <br>
-			<button class="waves-effect btn red darken-2 buttons" onclick = "deletePost('${doc.id}')">Eliminar</button>
-			<button class="btn blue rigth buttons" id = "like-${doc.id}" onclick = "likePost('${doc.id}','${doc.data().like}')" >${doc.data().like} Like</button>
-			<button class="btn orange buttons" id="buttonAdd-${doc.id}"  onclick="editPost('${doc.id}', '${doc.data().post}')" >Editar</button>
-			<div>
-			`
+			console.log(idUserInLine);
+			console.log(`${doc.id} => ${doc.data().post} => ${doc.data().like} =>${doc.data().id}`);
+
+			if ( `${doc.data().id}` != idUserInLine  && `${doc.data().privacity}` == "SoloYo") {
+					boxPosteado.innerHTML +=
+						`
+					<br>
+					<br><div class="z-depth-3 input-field col s10">
+					<p> ${doc.data().email} </p>
+					<textarea class="materialize-textarea textarea-custom-padding" disabled id="elPost-${doc.id}" cols="30" rows="10">${doc.data().post}</textarea>
+					</div>
+					<br>
+					<button class="btn blue rigth buttons" id = "like-${doc.id}" onclick = "likePost('${doc.id}','${doc.data().like}')" >${doc.data().like} Me gusta</button>
+					`
+				}
+			
+			else if (idUserInLine == `${doc.data().id}` && `${doc.data().privacity}` == "SoloYo") {
+				console.log(`${doc.id} => ${doc.data().post} => ${doc.data().like}`);
+				boxPosteado.innerHTML +=
+					`
+					<br>
+					<br><div class="z-depth-3 input-field col s10">
+					<p> ${doc.data().email} </p>
+					<textarea class="materialize-textarea textarea-custom-padding" disabled id="elPost-${doc.id}" cols="30" rows="10">${doc.data().post}</textarea>
+					</div>
+					<br>
+					<button class="waves-effect btn red darken-2 buttons" onclick = "deletePost('${doc.id}')">Eliminar</button>
+					<button class="btn blue rigth buttons" id = "like-${doc.id}" onclick = "likePost('${doc.id}','${doc.data().like}')" >${doc.data().like} Me gusta</button>
+					<button class="btn orange buttons" id="buttonAdd-${doc.id}"  onclick="editPost('${doc.id}', '${doc.data().post}')" >Editar</button>
+					`
+			}
+			else if (idUserInLine == `${doc.data().id}` && `${doc.data().privacity}` == "Todos") {
+				console.log(`${doc.id} => ${doc.data().post} => ${doc.data().like}`);
+				boxPosteado.innerHTML +=
+					`
+					<br>
+					<br><div class="z-depth-3 input-field col s10">
+					<p> ${doc.data().email} </p>
+					<textarea class="materialize-textarea textarea-custom-padding" disabled id="elPost-${doc.id}" cols="30" rows="10">${doc.data().post}</textarea>
+					</div>
+					<br>
+					<button class="waves-effect btn red darken-2 buttons" onclick = "deletePost('${doc.id}')">Eliminar</button>
+					<button class="btn blue rigth buttons" id = "like-${doc.id}" onclick = "likePost('${doc.id}','${doc.data().like}')" >${doc.data().like} Me gusta</button>
+					<button class="btn orange buttons" id="buttonAdd-${doc.id}"  onclick="editPost('${doc.id}', '${doc.data().post}')" >Editar</button>
+					`
+			}
 		});
-	/* 	const buttonLikes= getElementById(${doc.data().id}) */
+		/* 	const buttonLikes= getElementById(${doc.data().id}) */
 	});
 }
 readPost();
@@ -98,6 +129,7 @@ const likePost = (id, cantActual) => {
 			// The document probably doesn't exist.
 			console.error("Error updating document: ", error);
 		});
+	event.preventDefault();
 }
 const logout = () => {
 	firebase.auth().signOut()

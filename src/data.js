@@ -12,7 +12,7 @@ window.login = () => {
           console.log("Usuario con login exitoso");
         })
         .catch((error) => {
-          alert("Aun no estas registradx ¿Qué esperas comienza a registrarte y veras todos los beneficios; o quizas tu contraseña no es correcta 😨");
+          alert("Aún no estas registradx");
         })
     }
   } else if ((emailValue || passwordValue) == "") {

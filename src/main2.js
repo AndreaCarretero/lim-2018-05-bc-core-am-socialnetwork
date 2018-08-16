@@ -15,3 +15,13 @@ const pintar = () => { //el value del post ya se guarda, pero no consolea
   }
   event.preventDefault();
 }
+//este evento es el del seleccionar que tipo de post se desea ver (publico o privados)
+selectViewPost.addEventListener('change', () => {
+	if (selectViewPost.value == 'public') {
+		readPublicPost();
+	}
+	else if (selectViewPost.value == 'private') {
+		readPrivatePost();
+	}
+})
+

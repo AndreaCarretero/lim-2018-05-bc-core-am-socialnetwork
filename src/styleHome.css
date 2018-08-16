@@ -19,7 +19,7 @@ img{
   margin: 4%;
   font-family: 'Modern Antiqua', cursive;
 }
-.boxOfPost{
+#boxOfPost{
   padding-left: 10.5%;
 }
 #publicarPost{
